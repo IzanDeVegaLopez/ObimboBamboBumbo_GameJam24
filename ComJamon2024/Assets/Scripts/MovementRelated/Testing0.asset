@@ -36,3 +36,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  dashForce: 25
+  dashLerpDuration: 0.1
+  dashCooldown: 0.6

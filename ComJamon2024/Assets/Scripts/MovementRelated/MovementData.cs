@@ -39,4 +39,9 @@ public class MovementData : ScriptableObject
     public Vector3 groundCheckOffset;
     public Vector3 groundCheckSize;
     public LayerMask groundMask;
+
+    [Header("Dash")]
+    public float dashForce;
+    public float dashLerpDuration;
+    public float dashCooldown = 1f;
 }

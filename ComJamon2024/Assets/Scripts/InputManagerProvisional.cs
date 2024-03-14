@@ -17,11 +17,13 @@ public class InputManagerProvisional : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump")) _chM.JumpPressed();
         if(Input.GetButtonUp("Jump")) _chM.JumpReleased();
+        if (Input.GetButtonDown("Dash")) _chM.DashPressed();
     }
 
 
     void FixedUpdate()
     {
-        _chM.SetXInput( Input.GetAxisRaw("Horizontal"));
+        _chM.SetXInput(Input.GetAxisRaw("Horizontal"));
+        _chM.SetYInput(Input.GetAxisRaw("Vertical"));
     }
 }

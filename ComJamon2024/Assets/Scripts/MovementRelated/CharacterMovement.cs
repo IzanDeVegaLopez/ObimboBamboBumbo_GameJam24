@@ -13,9 +13,11 @@ public class CharacterMovement : MonoBehaviour
 
     #region parameters
     float moveInputX;
+    float moveInputY;
     #endregion
 
     #region hiddenVariables
+    bool dashing = false;
     bool isJumping = false;
     bool jumpInputReleased = true;
     int touchingWall = 0;
@@ -25,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     float lastGroundedTime;
     float lastJumpTime;
     float lastWJtime = 10;
+    float lastDashTime = 10;
     #endregion
 
     #endregion
@@ -82,10 +85,12 @@ public class CharacterMovement : MonoBehaviour
             WR();
         }
 
-        Run(lastWJtime / _md.WJLerpDuration);
+        if(!dashing)
+            Run(lastWJtime / _md.WJLerpDuration);
+
 
         #region Jump Gravity
-        if (touchingWall != 0)
+        if (touchingWall != 0 || (lastDashTime < _md.dashLerpDuration))
         {
             _rb.gravityScale = 0;
         }
@@ -108,6 +113,12 @@ public class CharacterMovement : MonoBehaviour
         lastGroundedTime -= Time.fixedDeltaTime;
         lastJumpTime -= Time.fixedDeltaTime;
         lastWJtime += Time.fixedDeltaTime;
+        lastDashTime += Time.fixedDeltaTime;
+        Debug.Log((lastDashTime - _md.dashLerpDuration));
+        if(dashing == true && lastDashTime - _md.dashLerpDuration > 0)
+        {
+            StopDash();
+        }
         #endregion
     }
 
@@ -155,6 +166,20 @@ public class CharacterMovement : MonoBehaviour
         _rb.AddForce(i * Vector3.left * _md.WJxForce, ForceMode2D.Impulse);
     }
 
+    void Dash()
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(new Vector2(moveInputX, moveInputY).normalized * _md.dashForce, ForceMode2D.Impulse);
+        lastDashTime = 0;
+        dashing = true;
+    }
+
+    void StopDash()
+    {
+        _rb.velocity = Vector3.zero;
+        dashing = false;
+    }
+
 
     #endregion
 
@@ -162,6 +187,16 @@ public class CharacterMovement : MonoBehaviour
     public void SetXInput(float input)
     {
         moveInputX = input;
+    }
+    public void SetYInput(float input)
+    {
+        moveInputY = input;
+    }
+
+    public void DashPressed()
+    {
+        if(lastDashTime > _md.dashCooldown)
+            Dash();
     }
 
     public void JumpPressed()
