@@ -16,6 +16,7 @@ public class InputManagerProvisional : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Jump")) _chM.JumpPressed();
+        if(Input.GetButtonUp("Jump")) _chM.JumpReleased();
     }
 
 
