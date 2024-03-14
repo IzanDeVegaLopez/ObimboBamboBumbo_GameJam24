@@ -31,6 +31,10 @@ public class MovementData : ScriptableObject
     public float WJxForce = 10f;
     public float WJLerpDuration;
 
+    [Header("WR")]
+    public float WRmoveSpeed = 3f;
+    public float WRacceleration = 5f;
+
     [Header("Checks")]
     public Vector3 groundCheckOffset;
     public Vector3 groundCheckSize;

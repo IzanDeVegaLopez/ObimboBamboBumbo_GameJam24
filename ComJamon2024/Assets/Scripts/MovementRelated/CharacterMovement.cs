@@ -79,10 +79,19 @@ public class CharacterMovement : MonoBehaviour
             Jump();
         }
 
+        if(touchingWall != 0 && lastWJtime > _md.WJLerpDuration)
+        {
+            WR();
+        }
+
         Run(lastWJtime / _md.WJLerpDuration);
 
         #region Jump Gravity
-        if (isJumping && Mathf.Abs(_rb.velocity.y) < _md.jumpHangTimeThreshold)
+        if (touchingWall != 0)
+        {
+            _rb.gravityScale = 0;
+        }
+        else if (isJumping && Mathf.Abs(_rb.velocity.y) < _md.jumpHangTimeThreshold)
         {
             _rb.gravityScale = _md.gravityScale * _md.jumpHangGravityMult;
         }
@@ -118,6 +127,18 @@ public class CharacterMovement : MonoBehaviour
         float movement = speedDif * accelRate;
 
         _rb.AddForce(movement * Vector2.right);
+    }
+
+    void WR()
+    {
+        float speedDif = _md.WRmoveSpeed - _rb.velocity.y;
+
+        float movement = speedDif * _md.WRacceleration;
+
+        _rb.AddForce(movement * Vector2.up);
+
+        _rb.velocity = Vector2.up*Mathf.Max(_rb.velocity.y, 0);
+    
     }
 
     void Jump()
