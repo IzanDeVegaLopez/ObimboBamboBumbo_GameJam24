@@ -49,13 +49,11 @@ public class CharacterMovement : MonoBehaviour
         //CheckTouchingWall Right
         if(moveInputX == 1 && Physics2D.OverlapBox(_myTransform.position + _md.WJCheckOffset, _md.WJCheckSize, 0, _md.groundMask))
         {
-            Debug.Log(1);
             touchingWall = 1;
         }
         //Checktouching wall left
         else if (moveInputX == -1 && Physics2D.OverlapBox(_myTransform.position + _md.WJCheckOffset.x * Vector3.left + Vector3.up*_md.WJCheckOffset.y, _md.WJCheckSize, 0, _md.groundMask))
         {
-            Debug.Log(-1);
             touchingWall = -1;
         }
         //Not touching wall
