@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class InputManagerProvisional : MonoBehaviour
 {
-    // Start is called before the first frame update
+    CharacterMovement _chM;
+
+    //private float xInput;
+
     void Start()
     {
-        
+        _chM = GetComponent<CharacterMovement>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Jump")) _chM.JumpPressed();
+    }
+
+
+    void FixedUpdate()
+    {
+        _chM.SetXInput( Input.GetAxisRaw("Horizontal"));
     }
 }
