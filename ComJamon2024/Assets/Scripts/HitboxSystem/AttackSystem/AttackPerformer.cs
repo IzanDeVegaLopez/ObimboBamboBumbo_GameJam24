@@ -7,6 +7,7 @@ public class AttackPerformer : MonoBehaviour
     ComboSystem _comboSystem;
 
     bool _isAttacking = false;
+    bool _isCancellable = false;
     bool _lastAttackHit = false;
 
     AnimatorController _anim;
@@ -20,8 +21,9 @@ public class AttackPerformer : MonoBehaviour
     public void TryAttacking()
     {
         //Esto debería llamar a que empiece la animación.
-        if (!_isAttacking)
+        if (!_isAttacking || _isCancellable)
         {
+            _isCancellable = false;
             _isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
 
@@ -32,12 +34,15 @@ public class AttackPerformer : MonoBehaviour
     public void PerformAttack()
     {
         _lastAttackHit = _comboSystem.Attack();
+        _isCancellable = true;
         Debug.Log(_lastAttackHit);
     }
 
     public void EndAttack()
     {
         _isAttacking = false;
+        _isCancellable = false;
         _anim.AttackFinished();
+        _comboSystem.resetComboState();
     }
 }

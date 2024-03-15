@@ -13,9 +13,9 @@ public class HealthHandler : MonoBehaviour
     UnityEvent onTakeDamage = new UnityEvent();
     UnityEvent onHeal = new UnityEvent();
     UnityEvent OnDeath = new UnityEvent();
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        _currentHealth--;
+        _currentHealth -= damage;
         if (_currentHealth <= 0) Death();
         onTakeDamage?.Invoke();
     }
