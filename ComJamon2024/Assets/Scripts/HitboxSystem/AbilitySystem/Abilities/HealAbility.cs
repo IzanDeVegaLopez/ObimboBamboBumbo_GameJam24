@@ -7,6 +7,11 @@ using UnityEngine;
 public class HealAbility : AbilityData
 {
     HealthHandler _myHealthHandler;
+
+    void Start()
+    {
+
+    }
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
         _myHealthHandler = abilityHolder.GetComponent<HealthHandler>();

@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     private float duration = 2f;
     public enum states
     {
-        walk, attack, wait
+        walk, attack, wait, stun
     }
     public states _state;
     #endregion
