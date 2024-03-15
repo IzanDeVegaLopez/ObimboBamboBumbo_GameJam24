@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class HitboxHandler : MonoBehaviour
 {
-    static private Collider2D[] _enemiesReached;
+    private Collider2D[] _enemiesReached;
     public Collider2D[] enemiesReached {get => _enemiesReached; }
-    static private HitboxData _hitboxData;
+    //private HitboxData _hitboxData;
     //mondongo
-    static void HitEnemies()
+    public void HitEnemies(HitboxData hData)
     {
-        _enemiesReached = Physics2D.OverlapBoxAll(_hitboxData.HitboxPosition, _hitboxData.HitboxSize, _hitboxData.ExtraVariable, _hitboxData.TargetLayerMask);
+        _enemiesReached = Physics2D.OverlapBoxAll(hData.HitboxPosition, hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
     }
 
 }

@@ -173,6 +173,14 @@ public class CharacterMovement : MonoBehaviour
         dashing = true;
     }
 
+    void Dash(Vector2 direction)
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(direction.normalized * _md.dashForce, ForceMode2D.Impulse);
+        lastDashTime = 0;
+        dashing = true;
+    }
+
     void StopDash()
     {
         _rb.velocity = Vector3.zero;
@@ -196,6 +204,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if(lastDashTime > _md.dashCooldown)
             Dash();
+    }
+
+    public void DashPressed(Vector2 direction)
+    {
+        if (lastDashTime > _md.dashCooldown)
+            Dash(direction);
     }
 
     public void JumpPressed()
