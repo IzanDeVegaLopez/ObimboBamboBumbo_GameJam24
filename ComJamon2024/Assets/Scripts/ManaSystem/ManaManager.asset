@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc9d9dc09bb0d6419e7fd7744db2fce, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: f3180db6a770ea44c945f102b6e12b20, type: 3}
+  m_Name: ManaManager
   m_EditorClassIdentifier: 
-  manaManager: {fileID: 0}
-  castingTime: 3
-  manaCost: 60
+  maxMana: 100
+  currentMana: 100

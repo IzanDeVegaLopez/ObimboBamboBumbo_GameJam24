@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComboSystem : HitboxHandler
 {
     [SerializeField]
-    HitboxData[] _groundedAttack;
+    HitboxData[] _groundedAttack = new HitboxData[4];
     [SerializeField]
     private ComboStates _currentComboState;
 
@@ -25,7 +25,8 @@ public class ComboSystem : HitboxHandler
             enemy.GetComponent<KnockbackComponent>().TakeKnockback(enemy.transform.position - transform.position);
         }
         #endregion 
-        /*
+
+        
         //Cambiar estado
         if ((int)_currentComboState != 3)
         {
@@ -35,8 +36,13 @@ public class ComboSystem : HitboxHandler
         {
             _currentComboState = (ComboStates)0;
         }
-        */
+        
         return enemiesReached.Length != 0;
+    }
+
+    public void resetComboState()
+    {
+        _currentComboState = ComboStates.slash1;
     }
 }
 
