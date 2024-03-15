@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 628334092}
   - component: {fileID: 628334091}
   - component: {fileID: 628334093}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 687920821}
   - component: {fileID: 687920823}
   - component: {fileID: 687920822}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 1047364504}
   - component: {fileID: 1047364503}
   - component: {fileID: 1047364505}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1202688777}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Scenery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 1507266492}
   - component: {fileID: 1507266491}
   - component: {fileID: 1507266493}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
