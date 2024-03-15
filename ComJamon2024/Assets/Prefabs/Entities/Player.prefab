@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2014023680734127375}
   - component: {fileID: 8565543427723605216}
   - component: {fileID: 5264134225553116815}
+  - component: {fileID: 6749513984363536720}
   - component: {fileID: 4806274239893500802}
   m_Layer: 6
   m_Name: Player
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -999146883
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +163,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &1136361175456201380
 MonoBehaviour:
@@ -240,6 +241,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6749513984363536720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085207926559294412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b0f92d4dbd49e40839df721d16c452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parryCounterAttack: {fileID: 11400000, guid: ad2c07cf287e7894a8b1c94883042495, type: 2}
 --- !u!114 &4806274239893500802
 MonoBehaviour:
   m_ObjectHideFlags: 0
