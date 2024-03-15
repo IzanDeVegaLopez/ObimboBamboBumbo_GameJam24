@@ -35,7 +35,7 @@ MonoBehaviour:
   groundCheckSize: {x: 0.2, y: 0.1, z: 0}
   groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   dashForce: 25
   dashLerpDuration: 0.1
   dashCooldown: 0.6

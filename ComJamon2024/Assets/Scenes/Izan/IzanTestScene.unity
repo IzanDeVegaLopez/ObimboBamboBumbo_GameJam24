@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 766337814}
   - component: {fileID: 766337816}
   - component: {fileID: 766337817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _currentComboState: 0
 --- !u!114 &766337815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa66058f03484244ca16f54a936a532e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _comboSystem: {fileID: 0}
 --- !u!95 &766337816
 Animator:
   serializedVersion: 5

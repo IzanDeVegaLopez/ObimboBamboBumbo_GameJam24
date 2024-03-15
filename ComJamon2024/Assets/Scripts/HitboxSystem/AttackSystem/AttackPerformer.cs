@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackPerformer : MonoBehaviour
 {
-    [SerializeField]
     ComboSystem _comboSystem;
 
     bool _isAttacking = false;

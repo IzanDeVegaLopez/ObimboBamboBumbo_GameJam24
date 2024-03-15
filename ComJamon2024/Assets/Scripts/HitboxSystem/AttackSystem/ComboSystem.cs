@@ -5,8 +5,7 @@ using UnityEngine;
 public class ComboSystem : HitboxHandler
 {
     [SerializeField]
-    HitboxData[] _groundedAttack;
-    [SerializeField]
+    HitboxData[] _groundedAttack = new HitboxData[4];
     private ComboStates _currentComboState;
 
     public ComboStates currentComboState { get => _currentComboState; }

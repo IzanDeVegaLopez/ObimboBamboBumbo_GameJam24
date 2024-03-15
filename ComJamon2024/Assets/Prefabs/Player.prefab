@@ -15,7 +15,14 @@ GameObject:
   - component: {fileID: 5071413171601927747}
   - component: {fileID: 5475924835737756106}
   - component: {fileID: 4174148736912658718}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  - component: {fileID: 1691885575247076176}
+  - component: {fileID: -231280134437740366}
+  - component: {fileID: 5457697088013950426}
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,3 +214,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1691885575247076176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532657773458766099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa66058f03484244ca16f54a936a532e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-231280134437740366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532657773458766099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b0a84f226fe0443827047682e10dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundedAttack:
+  - {fileID: 11400000, guid: d97a082ca670c544393fbc68592886de, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &5457697088013950426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532657773458766099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f81311d0e22f0b4d9f82e623bf93cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
