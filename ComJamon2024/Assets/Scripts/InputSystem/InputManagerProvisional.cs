@@ -5,7 +5,10 @@ using UnityEngine;
 public class InputManagerProvisional : MonoBehaviour
 {
     CharacterMovement _chM;
+
     AbilityHandler _abilityHandler;
+    AttackPerformer _attP;
+
 
     #region MobileInputParameters
     private Vector2 leftScreenMobileInput;
@@ -17,6 +20,8 @@ public class InputManagerProvisional : MonoBehaviour
     {
         _chM = GetComponent<CharacterMovement>();
         _abilityHandler = GetComponent<AbilityHandler>();
+
+        _attP = GetComponent<AttackPerformer>();
     }
 
     void Update()
@@ -24,7 +29,8 @@ public class InputManagerProvisional : MonoBehaviour
         if (Input.GetButtonDown("Jump")) _chM.JumpPressed();
         if(Input.GetButtonUp("Jump")) _chM.JumpReleased();
         if (Input.GetButtonDown("Dash")) _chM.DashPressed();
-        if (Input.GetButtonDown("Heal")) _abilityHandler.HealAbility();
+        if (Input.GetButtonDown("Attack")) _attP.TryAttacking();
+        //if (Input.GetButtonDown("Heal")) _abilityHandler.HealAbility();
 
         #region mobileInput
         GetTouchesOnScreen(new Vector2( Screen.width / 2, 0), new Vector2(Screen.width, Screen.height), ref leftScreenMobileInput);

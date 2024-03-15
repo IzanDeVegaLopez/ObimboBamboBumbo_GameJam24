@@ -7,11 +7,19 @@ public class HitboxHandler : MonoBehaviour
 {
     private Collider2D[] _enemiesReached;
     public Collider2D[] enemiesReached {get => _enemiesReached; }
-    [SerializeField] private HitboxData _hitboxData;
+    private HitboxData _hitboxData;
     //mondongo
     public void HitEnemies(HitboxData hData)
     {
-        _enemiesReached = Physics2D.OverlapBoxAll(hData.HitboxPosition, hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
+        _hitboxData = hData;
+        _enemiesReached = Physics2D.OverlapBoxAll(transform.position + (hData.HitboxPosition.x * Vector3.right * CharacterMovement.Direction + hData.HitboxPosition.y * Vector3.up), hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (!Application.isPlaying || _hitboxData==null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube((Vector2)(transform.position + (_hitboxData.HitboxPosition.x * Vector3.right * CharacterMovement.Direction + _hitboxData.HitboxPosition.y * Vector3.up)), _hitboxData.HitboxSize);
     }
 
 }

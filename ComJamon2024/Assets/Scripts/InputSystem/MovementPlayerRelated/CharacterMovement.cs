@@ -22,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
     bool jumpInputReleased = true;
     int touchingWall = 0;
     int airJumpsLeft = 1;
+    float lastDirection = 1;
 
     #region Timers
     float lastGroundedTime;
@@ -30,6 +31,10 @@ public class CharacterMovement : MonoBehaviour
     float lastDashTime = 10;
     #endregion
 
+    #endregion
+
+    #region accesors
+    public static float Direction;
     #endregion
 
     void Awake()
@@ -194,6 +199,11 @@ public class CharacterMovement : MonoBehaviour
     public void SetXInput(float input)
     {
         moveInputX = input;
+        if (input != 0) changeLastDirection( Mathf.Sign(input));
+    }
+    private static void changeLastDirection(float i)
+    {
+        Direction = i;
     }
     public void SetYInput(float input)
     {
@@ -214,7 +224,6 @@ public class CharacterMovement : MonoBehaviour
 
     public void JumpPressed()
     {
-
         lastJumpTime = _md.JumpBufferTime;
     }
     public void JumpReleased()
