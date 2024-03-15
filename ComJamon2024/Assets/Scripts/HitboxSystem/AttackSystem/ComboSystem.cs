@@ -21,6 +21,8 @@ public class ComboSystem : HitboxHandler
         foreach (Collider2D enemy in enemiesReached)
         {
             //enemy.gameObject.GetComponent<>().DealDamage;
+            
+            enemy.GetComponent<KnockbackComponent>().TakeKnockback(enemy.transform.position - transform.position);
         }
         #endregion 
 
