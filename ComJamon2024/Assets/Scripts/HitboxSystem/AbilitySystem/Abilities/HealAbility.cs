@@ -10,7 +10,11 @@ public class HealAbility : AbilityData
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
         _myHealthHandler = abilityHolder.GetComponent<HealthHandler>();
-        //Ejecutar animación
-        _myHealthHandler.Heal(); //Se puede poner como evento de animación y es mejor, es solo para probar
+        if (_myHealthHandler.maxHealth > _myHealthHandler.currentHealth && manaManager.currentMana >= manaCost)
+        {
+            _myHealthHandler.Heal(); //Ejecutar animación. Se puede poner como evento de animación y es mejor, es solo para probar
+            manaManager.currentMana -= manaCost;
+        }
+        //else Ejecutar animación de que no se ha curado
     }
 }
