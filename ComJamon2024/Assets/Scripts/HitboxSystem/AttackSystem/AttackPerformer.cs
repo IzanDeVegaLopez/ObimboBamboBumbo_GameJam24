@@ -21,10 +21,8 @@ public class AttackPerformer : MonoBehaviour
     public void TryAttacking()
     {
         //Esto debería llamar a que empiece la animación.
-        Debug.Log("tryng");
         if (!_isAttacking || _isCancellable)
         {
-            Debug.Log("attacking");
             _isCancellable = false;
             _isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
