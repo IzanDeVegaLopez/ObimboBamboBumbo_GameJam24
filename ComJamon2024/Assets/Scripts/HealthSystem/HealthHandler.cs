@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _currentHealth = 1;
+    public int currentHealth { get => _currentHealth; }
+    
+    UnityEvent onTakeDamage = new UnityEvent();
+    UnityEvent onHeal = new UnityEvent();
+    UnityEvent OnDeath = new UnityEvent();
+    public void TakeDamage()
     {
-        
+        _currentHealth--;
+        if (_currentHealth <= 0) Death();
+        onTakeDamage?.Invoke();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Heal()
     {
-        
+        _currentHealth++;
+        onHeal?.Invoke();
+    }
+    public void Death()
+    {
+        OnDeath?.Invoke();
+        Destroy(gameObject);
     }
 }

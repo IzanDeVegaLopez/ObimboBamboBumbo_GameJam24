@@ -8,6 +8,6 @@ public class AbilityHolder : MonoBehaviour
 
     public void UseAbility()
     {
-        ability.ExecuteAbility();
+        ability.ExecuteAbility(this);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManagerProvisional : MonoBehaviour
 {
     CharacterMovement _chM;
+    AbilityHandler _abilityHandler;
 
     #region MobileInputParameters
     private Vector2 leftScreenMobileInput;
@@ -15,6 +16,7 @@ public class InputManagerProvisional : MonoBehaviour
     void Start()
     {
         _chM = GetComponent<CharacterMovement>();
+        _abilityHandler = GetComponent<AbilityHandler>();
     }
 
     void Update()
@@ -22,6 +24,7 @@ public class InputManagerProvisional : MonoBehaviour
         if (Input.GetButtonDown("Jump")) _chM.JumpPressed();
         if(Input.GetButtonUp("Jump")) _chM.JumpReleased();
         if (Input.GetButtonDown("Dash")) _chM.DashPressed();
+        if (Input.GetButtonDown("Heal")) _abilityHandler.HealAbility();
 
         #region mobileInput
         GetTouchesOnScreen(new Vector2( Screen.width / 2, 0), new Vector2(Screen.width, Screen.height), ref leftScreenMobileInput);

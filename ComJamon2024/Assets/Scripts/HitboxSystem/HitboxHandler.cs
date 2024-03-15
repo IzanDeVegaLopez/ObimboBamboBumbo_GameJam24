@@ -7,7 +7,7 @@ public class HitboxHandler : MonoBehaviour
 {
     private Collider2D[] _enemiesReached;
     public Collider2D[] enemiesReached {get => _enemiesReached; }
-    //private HitboxData _hitboxData;
+    [SerializeField] private HitboxData _hitboxData;
     //mondongo
     public void HitEnemies(HitboxData hData)
     {
