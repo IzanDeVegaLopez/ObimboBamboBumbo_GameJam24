@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90ab97aea117cb4f96af44651cbf772, type: 3}
   m_Name: EnemyKnockback
   m_EditorClassIdentifier: 
-  knockbackForce: 10
+  knockbackForce: 2
