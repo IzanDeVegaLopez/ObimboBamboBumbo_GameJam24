@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
 
     #region accesors
     public static float Direction;
+    public float direction { get => Direction; }
     #endregion
 
     void Awake()
