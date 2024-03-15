@@ -7,7 +7,6 @@ public class SliderController : MonoBehaviour
 {
     [SerializeField]
     ManaManager manaManager;
-    int whool = 0;
     private Slider slider;
     // Start is called before the first frame update
     void Start()
