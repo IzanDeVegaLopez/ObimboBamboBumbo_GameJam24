@@ -7,7 +7,7 @@ public class InputManagerProvisional : MonoBehaviour
     CharacterMovement _chM;
 
     AbilityAttack _aAttack;
-    AbilityHandler _abilityHandler;
+    //AbilityHandler _abilityHandler;
     AttackPerformer _attP;
 
 
@@ -20,8 +20,8 @@ public class InputManagerProvisional : MonoBehaviour
     void Start()
     {
         _chM = GetComponent<CharacterMovement>();
-        _abilityHandler = GetComponent<AbilityHandler>();
-        //_aAttack = GetComponent<AbilityAttack>();
+        //_abilityHandler = GetComponent<AbilityHandler>();
+        _aAttack = GetComponent<AbilityAttack>();
         _attP = GetComponent<AttackPerformer>();
     }
 

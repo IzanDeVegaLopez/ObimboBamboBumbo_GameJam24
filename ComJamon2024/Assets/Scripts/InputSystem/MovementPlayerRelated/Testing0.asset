@@ -25,13 +25,13 @@ MonoBehaviour:
   jumpHangGravityMult: 0.4
   jumpHangTimeThreshold: 0.1
   totalAirJumpNumber: 1
-  WJCheckOffset: {x: 0.3, y: 0, z: 0}
-  WJCheckSize: {x: 0.2, y: 0.4, z: 0}
+  WJCheckOffset: {x: 0.3, y: 0.65, z: 0}
+  WJCheckSize: {x: 0.2, y: 1.2, z: 0}
   WJxForce: 10
   WJLerpDuration: 0.2
   WRmoveSpeed: 4
   WRacceleration: 2
-  groundCheckOffset: {x: 0, y: -0.25, z: 0}
+  groundCheckOffset: {x: 0, y: 0, z: 0}
   groundCheckSize: {x: 0.2, y: 0.1, z: 0}
   groundMask:
     serializedVersion: 2

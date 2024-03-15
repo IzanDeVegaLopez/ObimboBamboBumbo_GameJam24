@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     private MovementData _md;
     private Rigidbody2D _rb;
     private Transform _myTransform;
+    private AnimatorController _anim;
     #endregion
 
     #region parameters
@@ -35,13 +36,14 @@ public class CharacterMovement : MonoBehaviour
 
     #region accesors
     public static float Direction;
-    public float direction { get => Direction; }
+    //public float direction { get => Direction; }
     #endregion
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _myTransform = transform;
+        _anim = GetComponent<AnimatorController>();
     }
 
     void FixedUpdate()
@@ -91,8 +93,11 @@ public class CharacterMovement : MonoBehaviour
             WR();
         }
 
-        if(!dashing)
+        if (!dashing)
+        {
             Run(lastWJtime / _md.WJLerpDuration);
+        }
+
 
 
         #region Jump Gravity
@@ -124,6 +129,10 @@ public class CharacterMovement : MonoBehaviour
         {
             StopDash();
         }
+        #endregion
+
+        #region animator
+        _anim.SetWalking(moveInputX!=0);
         #endregion
     }
 
