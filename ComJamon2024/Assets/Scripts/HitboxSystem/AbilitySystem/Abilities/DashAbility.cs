@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAbility : MonoBehaviour
+public class DashAbility : AbilityData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    CharacterMovement _myCharacterMovement;
+    BoxCollider2D _boxCollider;
 
-    // Update is called once per frame
-    void Update()
+    public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
-        
+        _myCharacterMovement = abilityHolder.GetComponent<CharacterMovement>();
+        _boxCollider = abilityHolder.GetComponent<BoxCollider2D>();
+        _boxCollider.isTrigger = true;
+        _myCharacterMovement.DashPressed();
     }
 }
