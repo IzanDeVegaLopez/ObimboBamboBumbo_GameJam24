@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour
 {
+    [SerializeField]
+    ManaManager manaManager;
     int whool = 0;
     private Slider slider;
     // Start is called before the first frame update
@@ -14,8 +16,8 @@ public class SliderController : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void UpdateProgress()
+    public void Update()
     {
-        
+        slider.value = manaManager.currentMana;
     }
 }
