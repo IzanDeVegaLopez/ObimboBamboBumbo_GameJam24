@@ -12,4 +12,15 @@ public class DashAbilityHelper : MonoBehaviour
             enemy.GetComponent<HealthHandler>().TakeDamage(1);
         }
     }
+
+    private void Start()
+    {
+        StartCoroutine(Destroy());
+    }
+
+    private IEnumerator Destroy()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        Destroy(gameObject);
+    }
 }

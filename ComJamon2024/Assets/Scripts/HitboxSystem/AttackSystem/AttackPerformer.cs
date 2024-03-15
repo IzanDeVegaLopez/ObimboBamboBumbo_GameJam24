@@ -23,12 +23,18 @@ public class AttackPerformer : MonoBehaviour
         //Esto debería llamar a que empiece la animación.
         if (!_isAttacking || _isCancellable)
         {
-            _isCancellable = false;
-            _isAttacking = true;
+            //_isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
 
         }
 
+    }
+
+    //Se llama en el primer frame de animacion
+    public void InitAttack()
+    {
+        _isCancellable = false;
+        _isAttacking = false;
     }
 
     public void PerformAttack()
@@ -44,5 +50,11 @@ public class AttackPerformer : MonoBehaviour
         _isCancellable = false;
         _anim.AttackFinished();
         _comboSystem.resetComboState();
+    }
+
+    public void AbilityUsed()
+    {
+        _isAttacking = true;
+        _isCancellable = false;
     }
 }

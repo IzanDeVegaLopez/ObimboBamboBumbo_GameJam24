@@ -11,6 +11,7 @@ public class AbilityHandler : MonoBehaviour
 
     public void ExecuteAbility()
     {
+        GetComponent<AttackPerformer>().AbilityUsed();
         _abilities[_abilityIndex].UseAbility();
     }
 
