@@ -114,7 +114,6 @@ public class CharacterMovement : MonoBehaviour
         lastJumpTime -= Time.fixedDeltaTime;
         lastWJtime += Time.fixedDeltaTime;
         lastDashTime += Time.fixedDeltaTime;
-        Debug.Log((lastDashTime - _md.dashLerpDuration));
         if(dashing == true && lastDashTime - _md.dashLerpDuration > 0)
         {
             StopDash();
