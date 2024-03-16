@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: 6808446474519733244}
   - component: {fileID: 4463627716546497245}
   - component: {fileID: 6820587994719076627}
+<<<<<<< Updated upstream
   - component: {fileID: 2276644967530730742}
+=======
+  - component: {fileID: 8161434286632640182}
+>>>>>>> Stashed changes
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -210,7 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHitbox: {fileID: 11400000, guid: b5a5412a33c0fe44abd7b235ddf4c8c1, type: 2}
+<<<<<<< Updated upstream
 --- !u!114 &2276644967530730742
+=======
+--- !u!114 &8161434286632640182
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

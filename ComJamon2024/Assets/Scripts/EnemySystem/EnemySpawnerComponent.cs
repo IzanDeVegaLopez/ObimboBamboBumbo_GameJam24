@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnemySpawnerComponent : MonoBehaviour
 {
-    #region parameters
     //corrutinas
     private float elapsedTime = 0f;
     [SerializeField]
     private float spawnTime = 1f;
-    #endregion
 
     #region references
     [SerializeField]
@@ -17,31 +15,30 @@ public class EnemySpawnerComponent : MonoBehaviour
     //Enemigo a clonar, luego se cambia por un array o lista
     [SerializeField]
     private List<GameObject> _enemy;
+
     
-    private WaveHandler _waveHandler;
     #endregion
     #region methods
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
-        //int i = Random.Range(0, _enemy.Count);
-        Debug.Log("Spawning");
-        GameObject enemy = Instantiate(_enemy[0], _spawnTransform.position, transform.rotation);
-        _waveHandler.RegisterEnemy(enemy);
+        if (HordeManager.Instance.totalEnemies < HordeManager.Instance.nMaxEnemies && WaveHandler.Instance.nEnemy < WaveHandler.Instance.nPerWave)
+        {
+            //int i = Random.Range(0, _enemy.Count);
+            GameObject enemy = Instantiate(_enemy[0], _spawnTransform.position, transform.rotation);
+            WaveHandler.Instance.RegisterEnemy(enemy);
+        }
+        
 
     }
     #endregion
-    private void Start()
-    {
-        _waveHandler = FindObjectOfType<WaveHandler>();
-    }
     private void Update()
     {
         elapsedTime += Time.deltaTime;
         if (elapsedTime > spawnTime)
         {
-            Debug.Log("spawn");
-            SpawnEnemy();
+           SpawnEnemy();
             elapsedTime = 0f;
         }
+        
     }
 }
