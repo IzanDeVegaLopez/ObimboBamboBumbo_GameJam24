@@ -22,7 +22,7 @@ public class ComboSystem : HitboxHandler
         {
             enemy.gameObject.GetComponent<HealthHandler>().TakeDamage(_groundedAttack[(int)_currentComboState].Damage);
             
-            enemy.GetComponent<KnockbackComponent>()?.TakeKnockback(enemy.transform.position - transform.position);
+            enemy.gameObject.GetComponent<KnockbackComponent>().TakeKnockback(enemy.transform.position - transform.position);
         }
         #endregion 
 
