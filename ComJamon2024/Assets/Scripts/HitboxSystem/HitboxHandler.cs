@@ -12,7 +12,7 @@ public class HitboxHandler : MonoBehaviour
     public void HitEnemies(HitboxData hData)
     {
         _hitboxData = hData;
-        _enemiesReached = Physics2D.OverlapBoxAll(transform.position + (hData.HitboxPosition.x * Vector3.right * CharacterMovement.Direction + hData.HitboxPosition.y * Vector3.up), hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
+        _enemiesReached = Physics2D.OverlapBoxAll(transform.position + (CharacterMovement.Direction * hData.HitboxPosition.x * Vector3.right + hData.HitboxPosition.y * Vector3.up), hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
     }
 
     private void OnDrawGizmosSelected()
