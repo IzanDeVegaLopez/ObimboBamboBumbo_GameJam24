@@ -16,6 +16,7 @@ public class EnemySpawnerComponent : MonoBehaviour
     [SerializeField]
     private List<GameObject> _enemy;
 
+
     
     #endregion
     #region methods

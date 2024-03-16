@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthHandler = GetComponent<HealthHandler>();
+        healthHandler = GetComponentInParent<HealthHandler>();
         player = transform;
     }
 
@@ -21,13 +21,12 @@ public class Player : MonoBehaviour
     }
     private void UpdateStrings()
     {
-        int current = healthHandler.currentHealth;
+
         for (int i = 0; i < healthHandler.maxHealth; i++)
         {
-            if (current > healthHandler.currentHealth)
+            if (healthHandler.currentHealth > i)
             {
                 player.GetChild(i).gameObject.SetActive(true);
-                current--;
             }
             else
             {

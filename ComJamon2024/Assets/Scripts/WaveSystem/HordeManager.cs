@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class HordeManager : MonoBehaviour
 {
+    public UnityEvent onHordeFinished = new UnityEvent();
     #region parameters
     
     public int nMaxEnemies = 1;
@@ -24,6 +27,11 @@ public class HordeManager : MonoBehaviour
     public void AddKilledEnemy()
     {
         killedEnemies++;
+
+        if (totalEnemies == nMaxEnemies && totalEnemies == killedEnemies)
+        {
+            onHordeFinished?.Invoke();
+        }
     }
     #endregion
 
@@ -43,9 +51,5 @@ public class HordeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalEnemies == nMaxEnemies && totalEnemies == killedEnemies )
-        {
-            Debug.Log("Acabado");
-        }
     }
 }

@@ -27,17 +27,21 @@ public class WaveHandler : MonoBehaviour
     }
     public void RegisterEnemy(GameObject enemy)
     {
-        Debug.Log("Register");
         enemies.Add(enemy);
         SetNenemies(1);
         HordeManager.Instance.AddSpawnedEnemy(1);
+
+        if (nEnemy > nPerWave)
+        {
+            ReleaseEnemy(enemy);
+        }
     }
-    private void ReleaseEnemy()
+    private void ReleaseEnemy(GameObject enemy)
     {
         if (enemies.Count > 0)
         {
-            Destroy(enemies[nEnemy - 1]);
-            enemies.Remove(enemies[nEnemy - 1]);
+            enemies.Remove(enemy);
+            Destroy(enemy);
             SetNenemies(-1);
             HordeManager.Instance.AddSpawnedEnemy(-1);
         }
@@ -58,10 +62,6 @@ public class WaveHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (nEnemy > nPerWave)
-        {
-            ReleaseEnemy();
-        }
+
     }
 }

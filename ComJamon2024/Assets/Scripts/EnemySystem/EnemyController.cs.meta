@@ -4,8 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - enemy: {instanceID: 0}
-  - target: {fileID: 6508514874456642637, guid: a6573d4983e118c4b8b76b2777d41859, type: 3}
+  - enemy: {fileID: 11400000, guid: a4493b9285a8427418e97aab6b0d93e1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
