@@ -56,17 +56,9 @@ public class EnemyController : MonoBehaviour
             else
             {
 
-                if (_myTransform.position.x > target.transform.position.x)
-                {
-                    _rb.velocity = Vector2.left * enemy.speed;
-                    Dir = -1;
-                }
-                else if (_myTransform.position.x < target.transform.position.x)
-                {
-                    _rb.velocity = Vector2.right * enemy.speed;
-                    Dir = 1;
-                }
-                else _rb.velocity = Vector2.zero;
+                Dir = (int) Mathf.Sign(target.transform.position.x - _myTransform.position.x);
+                _rb.velocity = Dir * Vector2.right * enemy.speed;
+                //else _rb.velocity = Vector2.zero;
             }
         }
         else if (_state == states.attack)
@@ -76,12 +68,10 @@ public class EnemyController : MonoBehaviour
             elapsedTime += Time.fixedDeltaTime;
             if (elapsedTime > duration)
             {
+                _enemyAttackHandler.EnemyAttacks();
+                //Debug.Log("Miau");
                 _state = states.wait;
                 elapsedTime = 0;
-            }
-            else
-            {
-                _enemyAttackHandler.EnemyAttacks();
             }
         }
         else
@@ -101,9 +91,7 @@ public class EnemyController : MonoBehaviour
                 {
                     _state = states.walk;
                 }
-            }
-
-            
+            }            
         }  
     }
 }
