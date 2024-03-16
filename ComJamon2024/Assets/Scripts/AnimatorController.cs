@@ -18,7 +18,7 @@ public class AnimatorController : MonoBehaviour
     private void FixedUpdate()
     {
         _spriteRenderer.flipX = (CharacterMovement.Direction == -1);
-        Debug.Log(_spriteRenderer.flipX);
+        // Debug.Log(_spriteRenderer.flipX);
     }
 
     public void StartAttackAnim(int i)

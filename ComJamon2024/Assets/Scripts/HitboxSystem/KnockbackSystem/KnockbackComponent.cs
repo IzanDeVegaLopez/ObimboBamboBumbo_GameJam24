@@ -11,6 +11,7 @@ public class KnockbackComponent : MonoBehaviour
 
     public void TakeKnockback(Vector3 dir)
     {
+        _rb.velocity = Vector2.zero;
         _rb.AddForce(new Vector3(dir.x, 0).normalized * _kd.knockbackForce, ForceMode2D.Impulse);
     }
 
