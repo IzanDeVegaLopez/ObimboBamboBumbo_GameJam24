@@ -145,3 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxDistance: 10
   _totalTime: 1.5
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128

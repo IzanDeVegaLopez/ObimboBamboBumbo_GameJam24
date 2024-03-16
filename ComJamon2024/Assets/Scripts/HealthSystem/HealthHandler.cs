@@ -9,10 +9,11 @@ public class HealthHandler : MonoBehaviour
 
     [SerializeField] private int _maxHealth = 5;
     public int maxHealth { get => _maxHealth; }
+    [SerializeField]
     private int _currentHealth = 1;
     public int currentHealth { get => _currentHealth; }
 
-    private bool _blocking;
+    private bool _blocking = false;
     
     public UnityEvent onTakeDamage = new UnityEvent();
     public UnityEvent onHeal = new UnityEvent();
@@ -24,6 +25,8 @@ public class HealthHandler : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+
+        //Debug.Log(damage);
         if (!_blocking)
         {
             _currentHealth-= damage;

@@ -19,6 +19,7 @@ public class AbilityAttack : HitboxHandler
         #region enemyDamage
         foreach (Collider2D enemy in enemiesReached)
         {
+            enemy.gameObject.GetComponent<HealthHandler>().TakeDamage(_parryCounterAttack.Damage);
             //Hacer daño a enemigos
         }
         #endregion
@@ -35,6 +36,7 @@ public class AbilityAttack : HitboxHandler
         #region enemyDamage
         foreach (Collider2D enemy in enemiesReached)
         {
+            enemy.gameObject.GetComponent<HealthHandler>().TakeDamage(_dashAttack.Damage);
             //Hacer daño a enemigos
         }
         #endregion
