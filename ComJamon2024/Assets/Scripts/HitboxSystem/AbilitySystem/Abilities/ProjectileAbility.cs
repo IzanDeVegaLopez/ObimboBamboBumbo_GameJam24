@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Dash", menuName = "AbilityData/DashData")]
-public class DashAbility : AbilityData
+[CreateAssetMenu(fileName = "Projectile", menuName = "AbilityData/ProjectileData")]
+public class ProjectileAbility : AbilityData
 {
     [SerializeField] GameObject _hitbox;
     [SerializeField] float _dashForce;
@@ -17,8 +17,7 @@ public class DashAbility : AbilityData
 
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
-        abilityHolder.GetComponent<CharacterMovement>().DashAttack(_dashForce, _duration);
-        abilityHolder.GetComponent<AnimatorController>().StartAttackAnim(-1);
+        
     }
 
 }
