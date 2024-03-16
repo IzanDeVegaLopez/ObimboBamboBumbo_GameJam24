@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1291270296609946357}
   - component: {fileID: 2206857551595413077}
   - component: {fileID: 904721315289751678}
-  - component: {fileID: 1136361175456201380}
   - component: {fileID: 5738864974613224827}
   - component: {fileID: 2014023680734127375}
   - component: {fileID: 8565543427723605216}
   - component: {fileID: 5264134225553116815}
   - component: {fileID: 6749513984363536720}
   - component: {fileID: 4806274239893500802}
+  - component: {fileID: 4561617130930306434}
+  - component: {fileID: 3763367172310530041}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -165,18 +166,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
---- !u!114 &1136361175456201380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efa4a08f4f137c4d934c165cfa53ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5738864974613224827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,5 +253,139 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f81311d0e22f0b4d9f82e623bf93cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4561617130930306434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085207926559294412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 107b21474c66eab4885ea00540f5f076, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5738864974613224827}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: SetXInput
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4085207926559294412}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 74ceb2e6-26dc-4620-9cbd-e254d8998dd3
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8eab2212-c8e5-44c0-95e3-5ca6574e71ed
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df02acc1-5896-43ff-97bc-d2349e025395
+    m_ActionName: Player/Dash[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: be13d417-6c77-4cb8-819a-4ffdea70a67e
+    m_ActionName: Player/BasicAttack[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6312a25-b72c-4c14-82c4-226aef87f612
+    m_ActionName: Player/SpecialAttack
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2dcb6bac-2471-4c6f-a977-6b28c324ee13
+    m_ActionName: Player/Heal
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cfe887ca-74ab-4ec7-86f9-7f3431b4b22c
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1afe024-90c2-4e6b-9f3a-dfc08d73ca0d
+    m_ActionName: UI/CloseMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c31b127-a679-4380-9e37-a9bdbd997e4c
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 319680e0-8462-4df5-ad14-39b5bc1e13a7
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8407d249-58fc-4b8f-a078-da34f5166205
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a400f0e-90c7-4a26-a2ef-b60a50c5a16c
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2576ee7d-c81e-4e51-8da1-cfdc6e9517d3
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0091dff9-0ea0-48a0-9da4-88e3b8da7bc6
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a40a5dfe-f1b1-48d2-b031-40c4d34c1319
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff309bec-65a7-4f94-96ce-fee8be3a6de5
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5e833943-d4c4-4114-9f47-f4c1bb54cf56
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &3763367172310530041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085207926559294412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16494dbb2a212f4e82f00fd04d5e8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
