@@ -185,7 +185,15 @@ public class CharacterMovement : MonoBehaviour
     void Dash()
     {
         _rb.velocity = Vector2.zero;
-        _rb.AddForce(new Vector2(moveInputX, moveInputY).normalized * _md.dashForce, ForceMode2D.Impulse);
+        if(moveInputY != 0)
+        {
+            _rb.AddForce(new Vector2(moveInputX, moveInputY).normalized * _md.dashForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            _rb.AddForce(Vector2.right * Direction * _md.dashForce, ForceMode2D.Impulse);
+
+        }
         lastDashTime = 0;
         dashing = true;
     }

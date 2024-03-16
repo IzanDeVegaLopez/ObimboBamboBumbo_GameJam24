@@ -991,6 +991,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4085207926559294412, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7814524389003419835}
+    - targetCorrespondingSourceObject: {fileID: 4085207926559294412, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7814524389003419852}
   m_SourcePrefab: {fileID: 100100000, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
 --- !u!1 &7814524389003419834 stripped
 GameObject:
@@ -1067,7 +1070,29 @@ MonoBehaviour:
   - {fileID: 7814524389003419837}
   - {fileID: 7814524389003419836}
   - {fileID: 7814524389003419835}
-  _abilityIndex: 3
+  _abilityIndex: 2
+--- !u!114 &7814524389003419852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814524389003419834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ec47899fa7d2b40a9c19840e3e56de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

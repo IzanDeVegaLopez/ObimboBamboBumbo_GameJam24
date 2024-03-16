@@ -16,7 +16,7 @@ public class ProjectileAbility : AbilityData
         _chMov = abilityHolder.GetComponent<CharacterMovement>();
         _chMov.SetAnchored(true);
 
-        Instantiate(_projectilePrefab,_chMov.transform.position, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
+        Instantiate(_projectilePrefab,_chMov.transform.position + 0.5f*Vector3.up, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
     }
 
     public void Finished()

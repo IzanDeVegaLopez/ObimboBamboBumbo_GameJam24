@@ -8,7 +8,12 @@ public class AbilityHandler : MonoBehaviour
 
     [SerializeField] AbilityHolder[] _abilities = new AbilityHolder[4];
 
-    AttackPerformer _aPerformer;
+    AnimatorController _anim;
+
+    CharacterMovement _chMov;
+    HealthHandler _healthHandler;
+
+    //AttackPerformer _aPerformer;
 
     [SerializeField]
     [Range(1,3)]
@@ -17,7 +22,10 @@ public class AbilityHandler : MonoBehaviour
 
     void Start()
     {
-        _aPerformer = GetComponent<AttackPerformer>();
+        //_aPerformer = GetComponent<AttackPerformer>();
+        _anim = GetComponent<AnimatorController>();
+        _chMov = GetComponent<CharacterMovement>();
+        _healthHandler = GetComponent<HealthHandler>();
     }
 
     public void ExecuteAbility()
@@ -25,10 +33,19 @@ public class AbilityHandler : MonoBehaviour
         if (_mana.currentMana < _abilities[_abilityIndex].aData.manaCost || CharacterMovement.Anchored) return;
         //_mana.currentMana -= _abilities[_abilityIndex].aData.manaCost;
         _abilities[_abilityIndex].UseAbility();
+        _anim.StartAttackAnim(-_abilityIndex);
+
+
     }
 
     public void HealAbility()
     {
         _abilities[0].UseAbility();
+    }
+
+    public void FinishBlockingStance()
+    {
+        _chMov.SetAnchored(false);
+        _healthHandler.SetBlock(false);
     }
 }
