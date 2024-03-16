@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     private AttackPerformer _attPerf;
     private AbilityHandler _abiHan;
 
-    bool heal = false;
+    [SerializeField]
+    private GameObject[] _menuList;
+
 
     private PlayerControls _controls;
     #endregion
@@ -27,6 +29,7 @@ public class InputManager : MonoBehaviour
         _controls.Player.Dash.performed += Dash;
         _controls.Player.BasicAttack.performed += BasicAttack;
         _controls.Player.Abilities.performed += Abilities;
+        _controls.Player.Pause.performed += PauseGame;
     }
 
     private void OnDisable()
@@ -40,6 +43,7 @@ public class InputManager : MonoBehaviour
         _controls.Player.Dash.performed -= Dash;
         _controls.Player.BasicAttack.performed -= BasicAttack;
         _controls.Player.Abilities.performed -= Abilities;
+        _controls.Player.Pause.performed -= PauseGame;
 
     }
     public void Prueba(InputAction.CallbackContext context)
@@ -96,7 +100,13 @@ public class InputManager : MonoBehaviour
     }
     #endregion
 
-
+    #region menus
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        // Pausar juego
+        // Abrir menu de pausa
+    }
+    #endregion
 
     private void Awake()
     {
