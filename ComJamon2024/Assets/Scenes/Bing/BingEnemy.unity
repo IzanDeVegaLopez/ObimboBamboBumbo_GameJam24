@@ -1430,6 +1430,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5024022091371885703, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024022091371885703, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724896810437912088, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _kd
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eebeade2169a914f95c3b578dc3f533, type: 2}
     - target: {fileID: 6749513984363536720, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: _dashAttack
       value: 
@@ -1469,7 +1481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52ab63f7f4902b4a82347baae9c8302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nMaxEnemies: 4
+  nMaxEnemies: 10
+  totalEnemies: 0
+  killedEnemies: 0
 --- !u!114 &1870468372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d68447153ceda548b67f05fb0655a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nPerWave: 2
+  nEnemy: 0
+  nPerWave: 3
+  enemies: []
 --- !u!4 &1870468373
 Transform:
   m_ObjectHideFlags: 0
@@ -1556,7 +1572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7429021469382547706, guid: d76f90e6de55dfa4baad44c64309c30f, type: 3}
       propertyPath: spawnTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7429021469382547706, guid: d76f90e6de55dfa4baad44c64309c30f, type: 3}
       propertyPath: _waveHandler

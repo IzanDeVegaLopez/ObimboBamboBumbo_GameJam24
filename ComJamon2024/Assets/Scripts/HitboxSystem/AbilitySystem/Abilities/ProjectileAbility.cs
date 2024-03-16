@@ -13,10 +13,13 @@ public class ProjectileAbility : AbilityData
 
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
-        _chMov = abilityHolder.GetComponent<CharacterMovement>();
-        _chMov.SetAnchored(true);
+        if (manaManager.currentMana >= manaCost)
+        {
+            _chMov = abilityHolder.GetComponent<CharacterMovement>();
+            _chMov.SetAnchored(true);
 
-        Instantiate(_projectilePrefab,_chMov.transform.position + 0.5f*Vector3.up, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
+            Instantiate(_projectilePrefab, _chMov.transform.position + 0.5f * Vector3.up, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
+        }
     }
 
     public void Finished()
