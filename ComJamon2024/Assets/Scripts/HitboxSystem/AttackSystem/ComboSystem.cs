@@ -20,7 +20,7 @@ public class ComboSystem : HitboxHandler
         //Hacer daño a los enemigos
         foreach (Collider2D enemy in enemiesReached)
         {
-            //enemy.gameObject.GetComponent<>().DealDamage;
+            enemy.gameObject.GetComponent<HealthHandler>().TakeDamage(_groundedAttack[(int)_currentComboState].Damage);
             
             enemy.GetComponent<KnockbackComponent>()?.TakeKnockback(enemy.transform.position - transform.position);
         }

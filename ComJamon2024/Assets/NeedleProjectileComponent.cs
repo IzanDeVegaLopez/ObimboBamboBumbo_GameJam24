@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class NeedleProjectileComponent : MonoBehaviour
 {
+    [SerializeField]
+    int damage = 2;
+
     float _timeSinceSpawn;
 
     [SerializeField] 
@@ -19,9 +22,16 @@ public class NeedleProjectileComponent : MonoBehaviour
 
     ProjectileAbility _pA;
 
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField]
+    LayerMask _enemyLayer;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Meter aquí que haga daño a todos los enemigos con los que se encuentre
+        Debug.Log(other);
+        if (_enemyLayer == (_enemyLayer|(1<< other.gameObject.layer)))
+        {
+            other.gameObject.GetComponent<HealthHandler>().TakeDamage(damage);
+        }
     }
 
     private void Start()

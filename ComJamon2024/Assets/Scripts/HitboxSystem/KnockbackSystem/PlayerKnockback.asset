@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc9d9dc09bb0d6419e7fd7744db2fce, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: d90ab97aea117cb4f96af44651cbf772, type: 3}
+  m_Name: PlayerKnockback
   m_EditorClassIdentifier: 
-  manaManager: {fileID: 11400000, guid: 1827875272611ca44a614f5599a57840, type: 2}
-  castingTime: 3
-  manaCost: 60
+  knockbackForce: 2

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8024945bf53394094911d889bebc76, type: 3}
   m_Name: ParryCounterAttack
   m_EditorClassIdentifier: 
+  Damage: 1
   HitboxPosition: {x: 0, y: 0, z: 0}
   HitboxSize: {x: 3, y: 3, z: 0}
   ExtraVariable: 0
