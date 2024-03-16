@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "Hold(duration=0.5),Press(behavior=1)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "b9106c6d-d005-4679-8392-bc9b6adcd433",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -258,6 +267,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Abilities",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "166d2df7-06a3-49e9-a4e8-b7fbf9e00c25",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f6dbb64-f597-4da5-90d8-b94ce907263b",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47e0ffca-2054-4b89-a413-b9f45f9af4fa",
+                    "path": "<DualShockGamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9a19b65-cbb9-4f83-bf8f-412665c25309",
+                    "path": "<SwitchProControllerHID>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
