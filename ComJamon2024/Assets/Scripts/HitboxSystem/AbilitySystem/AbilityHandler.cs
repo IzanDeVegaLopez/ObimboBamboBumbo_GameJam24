@@ -22,7 +22,8 @@ public class AbilityHandler : MonoBehaviour
 
     public void ExecuteAbility()
     {
-        if (_mana.currentMana < _abilities[_abilityIndex].aData.manaCost) return;
+        if (_mana.currentMana < _abilities[_abilityIndex].aData.manaCost || CharacterMovement.Anchored) return;
+        //_mana.currentMana -= _abilities[_abilityIndex].aData.manaCost;
         _abilities[_abilityIndex].UseAbility();
     }
 

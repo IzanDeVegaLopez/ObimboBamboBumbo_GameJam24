@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
     #endregion
 
     #region hiddenVariables
+    [SerializeField]
+    bool _anchored = false;
     bool dashing = false;
     bool isJumping = false;
     int touchingWall = 0;
@@ -35,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
 
     #region accesors
     public static float Direction;
+    public static bool Anchored;
     //public float direction { get => Direction; }
     #endregion
 
@@ -73,7 +76,7 @@ public class CharacterMovement : MonoBehaviour
         }
         #endregion
 
-        if (((lastGroundedTime > 0 && !isJumping) || touchingWall!=0 || (isJumping &&  airJumpsLeft > 0)) && lastJumpTime > 0 )
+        if (((lastGroundedTime > 0 && !isJumping) || touchingWall!=0 || (isJumping &&  airJumpsLeft > 0)) && lastJumpTime > 0 && !_anchored)
         {
             if (touchingWall != 0 && lastGroundedTime <= 0) 
             {
@@ -87,12 +90,12 @@ public class CharacterMovement : MonoBehaviour
             Jump();
         }
 
-        if(touchingWall != 0 && lastWJtime > _md.WJLerpDuration)
+        if(touchingWall != 0 && lastWJtime > _md.WJLerpDuration && !_anchored)
         {
             WR();
         }
 
-        if (!dashing)
+        if (!dashing && !_anchored)
         {
             Run(lastWJtime / _md.WJLerpDuration);
         }
@@ -195,6 +198,13 @@ public class CharacterMovement : MonoBehaviour
         dashing = true;
     }
 
+    public void SetAnchored(bool val)
+    {
+        _anchored = val;
+        Anchored = val;
+        if (val) _rb.velocity = Vector2.zero;
+    }
+
     void StopDash()
     {
         _rb.velocity = Vector3.zero;
@@ -229,13 +239,13 @@ public class CharacterMovement : MonoBehaviour
 
     public void DashPressed()
     {
-        if(lastDashTime > _md.dashCooldown)
+        if(lastDashTime > _md.dashCooldown && !_anchored)
             Dash();
     }
 
     public void DashPressed(Vector2 direction)
     {
-        if (lastDashTime > _md.dashCooldown)
+        if (lastDashTime > _md.dashCooldown && !_anchored)
             Dash(direction);
     }
 

@@ -5,19 +5,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Projectile", menuName = "AbilityData/ProjectileData")]
 public class ProjectileAbility : AbilityData
 {
-    [SerializeField] GameObject _hitbox;
-    [SerializeField] float _dashForce;
-    [SerializeField] float _duration;
+    [SerializeField] GameObject _projectilePrefab;
 
+    CharacterMovement _chMov;
 
-
-    //private Vector3 _instantiationPoint;
-    //private CharacterMovement _characterMovement;
-    //private Rigidbody2D _rb;
+    GameObject _projectile;
 
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
-        
+        _chMov = abilityHolder.GetComponent<CharacterMovement>();
+        _chMov.SetAnchored(true);
+
+        Instantiate(_projectilePrefab,_chMov.transform.position, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
+    }
+
+    public void Finished()
+    {
+        _chMov.SetAnchored(false);
     }
 
 }

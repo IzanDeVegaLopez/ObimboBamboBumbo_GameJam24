@@ -13,17 +13,19 @@ public class AttackPerformer : MonoBehaviour
     bool _lastAttackHit = false;
 
     AnimatorController _anim;
+    CharacterMovement _chMov;
 
     private void Start()
     {
         _comboSystem = GetComponent<ComboSystem>();
         _anim = GetComponent<AnimatorController>();
+        _chMov = GetComponent<CharacterMovement>();
     }
 
     public void TryAttacking()
     {
         //Esto debería llamar a que empiece la animación.
-        if (!_isAttacking || _isCancellable)
+        if ((!_isAttacking || _isCancellable) && !CharacterMovement.Anchored)
         {
             //_isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
@@ -52,5 +54,6 @@ public class AttackPerformer : MonoBehaviour
         _isCancellable = false;
         _anim.AttackFinished();
         _comboSystem.resetComboState();
+        _chMov.SetAnchored(false);
     }
 }
