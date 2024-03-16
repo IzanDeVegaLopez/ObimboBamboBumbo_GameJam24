@@ -6,6 +6,8 @@ using UnityEngine;
 public class FMODEvents : MonoBehaviour
 {
     #region references
+    [field: Header("BGM")]
+    [field: SerializeField] public EventReference level1 { get; private set; }
     [field: Header("SFX")]
     [field: SerializeField] public EventReference test {get; private set;}
     #endregion
