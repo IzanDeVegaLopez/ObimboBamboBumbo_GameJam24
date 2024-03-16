@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rb;
     //solo para testear
     private Animator _myAnimator;
+
+    private SpriteRenderer _mySpriteRenderer;
     #endregion
     #region properties
 
@@ -39,10 +41,10 @@ public class EnemyController : MonoBehaviour
         target = FindObjectOfType<CharacterMovement>().gameObject;
         _myAnimator = GetComponent<Animator>();
         _enemyAttackHandler = GetComponent<EnemyAttackHandler>();
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
     void FixedUpdate()
     {
-        
         float distance = Mathf.Abs(_myTransform.position.x - target.transform.position.x);
         if (_state == states.walk)
         {
@@ -93,5 +95,6 @@ public class EnemyController : MonoBehaviour
                 }
             }            
         }  
+        _mySpriteRenderer.flipX = (Dir ==1);
     }
 }
