@@ -26,7 +26,7 @@ MonoBehaviour:
   jumpHangTimeThreshold: 0.1
   totalAirJumpNumber: 1
   WJCheckOffset: {x: 0.3, y: 0.65, z: 0}
-  WJCheckSize: {x: 0.2, y: 1.2, z: 0}
+  WJCheckSize: {x: 0.2, y: 1, z: 0}
   WJxForce: 10
   WJLerpDuration: 0.2
   WRmoveSpeed: 4

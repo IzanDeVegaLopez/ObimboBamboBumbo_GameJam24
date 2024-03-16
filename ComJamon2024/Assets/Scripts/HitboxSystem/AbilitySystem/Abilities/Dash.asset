@@ -16,4 +16,5 @@ MonoBehaviour:
   castingTime: 0
   manaCost: 30
   _hitbox: {fileID: 3418109251654551384, guid: 985bfac99c075164f92afa2586929004, type: 3}
-  _dashForce: 5
+  _dashForce: 30
+  _duration: 0.15

@@ -11,14 +11,11 @@ public class AnimatorController : MonoBehaviour
     {
         _anim = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        Debug.Log(_anim);
-        Debug.Log(_spriteRenderer);
     }
 
     private void FixedUpdate()
     {
         _spriteRenderer.flipX = (CharacterMovement.Direction == -1);
-        Debug.Log(_spriteRenderer.flipX);
     }
 
     public void StartAttackAnim(int i)
@@ -34,5 +31,10 @@ public class AnimatorController : MonoBehaviour
     public void SetWalking(bool val)
     {
         _anim.SetBool("Walking", val);
+    }
+
+    public void DashAttack()
+    {
+        _anim.SetInteger("AttackIndex", -1);
     }
 }

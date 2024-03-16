@@ -6,8 +6,8 @@ public class InputManagerProvisional : MonoBehaviour
 {
     CharacterMovement _chM;
 
-    AbilityAttack _aAttack;
-    //AbilityHandler _abilityHandler;
+    //AbilityAttack _aAttack;
+    AbilityHandler _abilityHandler;
     AttackPerformer _attP;
 
 
@@ -20,8 +20,8 @@ public class InputManagerProvisional : MonoBehaviour
     void Start()
     {
         _chM = GetComponent<CharacterMovement>();
-        //_abilityHandler = GetComponent<AbilityHandler>();
-        _aAttack = GetComponent<AbilityAttack>();
+        _abilityHandler = GetComponent<AbilityHandler>();
+        //_aAttack = GetComponent<AbilityAttack>();
         _attP = GetComponent<AttackPerformer>();
     }
 
@@ -31,6 +31,7 @@ public class InputManagerProvisional : MonoBehaviour
         if(Input.GetButtonUp("Jump")) _chM.JumpReleased();
         if (Input.GetButtonDown("Dash")) _chM.DashPressed();
         if (Input.GetButtonDown("Attack")) _attP.TryAttacking();  //_aAttack.ParryAttack();
+        if (Input.GetButtonDown("Ability")) _abilityHandler.ExecuteAbility();
         //if (Input.GetButtonDown("Heal")) _abilityHandler.HealAbility();
 
         #region mobileInput
