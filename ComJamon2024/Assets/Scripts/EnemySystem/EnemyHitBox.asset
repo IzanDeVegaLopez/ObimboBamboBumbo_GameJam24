@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1261815f51c26a342a4d7b9860b2f445, type: 3}
-  m_Name: DefaultEnemy
+  m_Script: {fileID: 11500000, guid: 5b8024945bf53394094911d889bebc76, type: 3}
+  m_Name: EnemyHitBox
   m_EditorClassIdentifier: 
-  health: 2
-  speed: 3
-  range: 1
+  HitboxPosition: {x: 0.5, y: 0.25, z: 0}
+  HitboxSize: {x: 0.75, y: 1, z: 0}
+  ExtraVariable: 0
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 64

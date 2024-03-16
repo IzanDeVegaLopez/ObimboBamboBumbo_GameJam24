@@ -9,17 +9,12 @@ public class WaveHandler : MonoBehaviour
     private int nEnemy = 0;
     [SerializeField]
     private int nPerWave = 1;
-
-    //corrutinas
-    private float elapsedTime = 0f;
-    [SerializeField]
-    private float spawnTime = 1f;
     #endregion
 
     #region references
-    public List<GameObject> enemies = new List<GameObject>();
+    private List<GameObject> enemies = new List<GameObject>();
     private HordeManager hordeManager;
-    private EnemySpawnerComponent enemySpawner;
+    //private EnemySpawnerComponent enemySpawner;
     #endregion
     #region methods
     public void RegisterEnemy(GameObject enemy)
@@ -30,7 +25,9 @@ public class WaveHandler : MonoBehaviour
     }
     private void ReleaseEnemy()
     {
+        Destroy(enemies[nEnemy - 1]);
         enemies.Remove(enemies[nEnemy-1]);
+        
         nEnemy--;
         hordeManager.AddKilledEnemy();
     }
@@ -40,7 +37,6 @@ public class WaveHandler : MonoBehaviour
     void Start()
     {
         hordeManager = GetComponent<HordeManager>();
-        enemySpawner = FindObjectOfType<EnemySpawnerComponent>();
     }
 
     // Update is called once per frame
@@ -48,19 +44,8 @@ public class WaveHandler : MonoBehaviour
     {
         if (nEnemy > nPerWave)
         {
+            Debug.Log("Lleno");
             ReleaseEnemy();
-        }
-        else
-        {
-            elapsedTime += Time.deltaTime;
-            if (elapsedTime < spawnTime)
-            {
-                enemySpawner.SpawnEnemy();
-            }
-            else
-            {
-                elapsedTime = 0f;
-            }
         }
     }
 }

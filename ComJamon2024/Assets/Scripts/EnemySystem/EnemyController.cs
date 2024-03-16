@@ -8,7 +8,8 @@ public class EnemyController : MonoBehaviour
     #region references
     [SerializeField]
     private EnemyScriptableObjects enemy;
-    
+
+    private EnemyAttackHandler _enemyAttackHandler;
     private GameObject target;
     private Transform _myTransform;
     private Rigidbody2D _rb;
@@ -26,6 +27,8 @@ public class EnemyController : MonoBehaviour
         walk, attack, wait, stun
     }
     public states _state;
+
+    public static int Dir;
     #endregion
 
     void Start()
@@ -33,15 +36,14 @@ public class EnemyController : MonoBehaviour
         _myTransform = transform;
         _state = states.walk;
         _rb = GetComponent<Rigidbody2D>();
-        //Muy provisional!!!necesito help
         target = FindObjectOfType<CharacterMovement>().gameObject;
         _myAnimator = GetComponent<Animator>();
+        _enemyAttackHandler = GetComponent<EnemyAttackHandler>();
     }
     void FixedUpdate()
     {
         
         float distance = Mathf.Abs(_myTransform.position.x - target.transform.position.x);
-        Debug.Log("Distancia:" + distance);
         if (_state == states.walk)
         {
             _myAnimator.SetInteger("AnimState", 0);
@@ -54,8 +56,16 @@ public class EnemyController : MonoBehaviour
             else
             {
 
-                if (_myTransform.position.x > target.transform.position.x) _rb.velocity = Vector2.left * enemy.speed;
-                else if (_myTransform.position.x < target.transform.position.x) _rb.velocity = Vector2.right * enemy.speed;
+                if (_myTransform.position.x > target.transform.position.x)
+                {
+                    _rb.velocity = Vector2.left * enemy.speed;
+                    Dir = -1;
+                }
+                else if (_myTransform.position.x < target.transform.position.x)
+                {
+                    _rb.velocity = Vector2.right * enemy.speed;
+                    Dir = 1;
+                }
                 else _rb.velocity = Vector2.zero;
             }
         }
@@ -68,6 +78,10 @@ public class EnemyController : MonoBehaviour
             {
                 _state = states.wait;
                 elapsedTime = 0;
+            }
+            else
+            {
+                _enemyAttackHandler.EnemyAttacks();
             }
         }
         else

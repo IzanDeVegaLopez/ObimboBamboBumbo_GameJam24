@@ -7,6 +7,10 @@ public class HitboxHandler : MonoBehaviour
 {
     private Collider2D[] _enemiesReached;
     public Collider2D[] enemiesReached {get => _enemiesReached; }
+
+    private Collider2D _playerReached;
+    public Collider2D playerReached { get => _playerReached; }
+
     private HitboxData _hitboxData;
     //mondongo
     public void HitEnemies(HitboxData hData)
@@ -14,12 +18,17 @@ public class HitboxHandler : MonoBehaviour
         _hitboxData = hData;
         _enemiesReached = Physics2D.OverlapBoxAll(transform.position + (CharacterMovement.Direction * hData.HitboxPosition.x * Vector3.right + hData.HitboxPosition.y * Vector3.up), hData.HitboxSize, hData.ExtraVariable, hData.TargetLayerMask);
     }
+    public void HitPlayer(HitboxData hitboxData)
+    {
+        _hitboxData = hitboxData;
+        _playerReached = Physics2D.OverlapBox(transform.position + (hitboxData.HitboxPosition.x * Vector3.right * EnemyController.Dir + hitboxData.HitboxPosition.y * Vector3.up), hitboxData.HitboxSize, hitboxData.ExtraVariable, hitboxData.TargetLayerMask);
+    }
 
     private void OnDrawGizmosSelected()
     {
         if (!Application.isPlaying || _hitboxData==null) return;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube((Vector2)(transform.position + (_hitboxData.HitboxPosition.x * Vector3.right * CharacterMovement.Direction + _hitboxData.HitboxPosition.y * Vector3.up)), _hitboxData.HitboxSize);
+        Gizmos.DrawWireCube((Vector2)(transform.position + (_hitboxData.HitboxPosition.x * Vector3.right * EnemyController.Dir+ _hitboxData.HitboxPosition.y * Vector3.up)), _hitboxData.HitboxSize);
     }
 
 }
