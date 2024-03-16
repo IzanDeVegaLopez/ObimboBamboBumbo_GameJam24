@@ -64,21 +64,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SpecialAbility"",
+                    ""name"": ""Abilities"",
                     ""type"": ""Button"",
                     ""id"": ""c6312a25-b72c-4c14-82c4-226aef87f612"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Heal"",
-                    ""type"": ""Button"",
-                    ""id"": ""2dcb6bac-2471-4c6f-a977-6b28c324ee13"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Hold(duration=1.5)"",
+                    ""interactions"": ""Hold(duration=1),Press(behavior=1)"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -277,7 +268,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""SpecialAbility"",
+                    ""action"": ""Abilities"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -285,32 +276,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""5c52e024-44db-4482-b1ee-9ff8f0be7844"",
                     ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""SpecialAbility"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""88e5d32b-c9a6-4cde-993b-a3d0ae98f199"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Heal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""85ce0876-1472-40cd-bedf-040b0b63b706"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Heal"",
+                    ""action"": ""Abilities"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -906,8 +875,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_BasicAttack = m_Player.FindAction("BasicAttack", throwIfNotFound: true);
-        m_Player_SpecialAbility = m_Player.FindAction("SpecialAbility", throwIfNotFound: true);
-        m_Player_Heal = m_Player.FindAction("Heal", throwIfNotFound: true);
+        m_Player_Abilities = m_Player.FindAction("Abilities", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -986,8 +954,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_BasicAttack;
-    private readonly InputAction m_Player_SpecialAbility;
-    private readonly InputAction m_Player_Heal;
+    private readonly InputAction m_Player_Abilities;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -996,8 +963,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @BasicAttack => m_Wrapper.m_Player_BasicAttack;
-        public InputAction @SpecialAbility => m_Wrapper.m_Player_SpecialAbility;
-        public InputAction @Heal => m_Wrapper.m_Player_Heal;
+        public InputAction @Abilities => m_Wrapper.m_Player_Abilities;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1019,12 +985,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started += instance.OnBasicAttack;
             @BasicAttack.performed += instance.OnBasicAttack;
             @BasicAttack.canceled += instance.OnBasicAttack;
-            @SpecialAbility.started += instance.OnSpecialAbility;
-            @SpecialAbility.performed += instance.OnSpecialAbility;
-            @SpecialAbility.canceled += instance.OnSpecialAbility;
-            @Heal.started += instance.OnHeal;
-            @Heal.performed += instance.OnHeal;
-            @Heal.canceled += instance.OnHeal;
+            @Abilities.started += instance.OnAbilities;
+            @Abilities.performed += instance.OnAbilities;
+            @Abilities.canceled += instance.OnAbilities;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1041,12 +1004,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started -= instance.OnBasicAttack;
             @BasicAttack.performed -= instance.OnBasicAttack;
             @BasicAttack.canceled -= instance.OnBasicAttack;
-            @SpecialAbility.started -= instance.OnSpecialAbility;
-            @SpecialAbility.performed -= instance.OnSpecialAbility;
-            @SpecialAbility.canceled -= instance.OnSpecialAbility;
-            @Heal.started -= instance.OnHeal;
-            @Heal.performed -= instance.OnHeal;
-            @Heal.canceled -= instance.OnHeal;
+            @Abilities.started -= instance.OnAbilities;
+            @Abilities.performed -= instance.OnAbilities;
+            @Abilities.canceled -= instance.OnAbilities;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1214,8 +1174,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
-        void OnSpecialAbility(InputAction.CallbackContext context);
-        void OnHeal(InputAction.CallbackContext context);
+        void OnAbilities(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

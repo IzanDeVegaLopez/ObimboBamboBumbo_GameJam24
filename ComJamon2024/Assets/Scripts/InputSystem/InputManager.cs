@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class InputManager : MonoBehaviour
 {
@@ -25,8 +26,7 @@ public class InputManager : MonoBehaviour
         _controls.Player.Jump.canceled += JumpReleased;
         _controls.Player.Dash.performed += Dash;
         _controls.Player.BasicAttack.performed += BasicAttack;
-        _controls.Player.SpecialAbility.canceled += SpecialAbility;
-        _controls.Player.Heal.performed += Heal;
+        _controls.Player.Abilities.performed += Abilities;
     }
 
     private void OnDisable()
@@ -39,10 +39,15 @@ public class InputManager : MonoBehaviour
         _controls.Player.Jump.canceled -= JumpReleased;
         _controls.Player.Dash.performed -= Dash;
         _controls.Player.BasicAttack.performed -= BasicAttack;
-        _controls.Player.SpecialAbility.canceled -= SpecialAbility;
-        _controls.Player.Heal.performed -= Heal;
+        _controls.Player.Abilities.performed -= Abilities;
 
     }
+    public void Prueba(InputAction.CallbackContext context)
+    {
+        if (context.interaction is PressInteraction) Debug.Log("press");
+        else Debug.Log("hold");
+    }
+
 
     #region movement
     public void Move(InputAction.CallbackContext context)
@@ -75,15 +80,18 @@ public class InputManager : MonoBehaviour
         _attPerf.TryAttacking();
     }
 
-    public void SpecialAbility(InputAction.CallbackContext context)
+    public void Abilities(InputAction.CallbackContext context)
     {
-        if (!heal) _abiHan.ExecuteAbility();
-        else heal = false;
+        if (context.interaction is PressInteraction) SpecialAttack();
+        else if (context.interaction is HoldInteraction) Heal();
+    }
+    private void SpecialAttack()
+    {
+        _abiHan.ExecuteAbility();
     }
 
-    public void Heal(InputAction.CallbackContext context)
+    private void Heal()
     {
-        heal = true;
         _abiHan.HealAbility();
     }
     #endregion

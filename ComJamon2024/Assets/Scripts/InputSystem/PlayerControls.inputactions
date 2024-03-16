@@ -42,21 +42,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SpecialAbility",
+                    "name": "Abilities",
                     "type": "Button",
                     "id": "c6312a25-b72c-4c14-82c4-226aef87f612",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Heal",
-                    "type": "Button",
-                    "id": "2dcb6bac-2471-4c6f-a977-6b28c324ee13",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Hold(duration=1.5)",
+                    "interactions": "Hold(duration=1),Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -255,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "SpecialAbility",
+                    "action": "Abilities",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -263,32 +254,10 @@
                     "name": "",
                     "id": "5c52e024-44db-4482-b1ee-9ff8f0be7844",
                     "path": "<Gamepad>/buttonNorth",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "SpecialAbility",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "88e5d32b-c9a6-4cde-993b-a3d0ae98f199",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Heal",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "85ce0876-1472-40cd-bedf-040b0b63b706",
-                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Heal",
+                    "action": "Abilities",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
