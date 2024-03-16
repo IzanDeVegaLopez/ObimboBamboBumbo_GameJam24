@@ -5,9 +5,11 @@ using UnityEngine;
 public class AttackPerformer : MonoBehaviour
 {
     ComboSystem _comboSystem;
-
+    [SerializeField]
     bool _isAttacking = false;
+    [SerializeField]
     bool _isCancellable = false;
+    [SerializeField]
     bool _lastAttackHit = false;
 
     AnimatorController _anim;
@@ -34,7 +36,7 @@ public class AttackPerformer : MonoBehaviour
     public void InitAttack()
     {
         _isCancellable = false;
-        _isAttacking = false;
+        _isAttacking = true;
     }
 
     public void PerformAttack()
@@ -50,11 +52,5 @@ public class AttackPerformer : MonoBehaviour
         _isCancellable = false;
         _anim.AttackFinished();
         _comboSystem.resetComboState();
-    }
-
-    public void AbilityUsed()
-    {
-        _isAttacking = true;
-        _isCancellable = false;
     }
 }

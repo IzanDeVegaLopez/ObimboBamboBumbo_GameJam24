@@ -20,16 +20,15 @@ public class CharacterMovement : MonoBehaviour
     #region hiddenVariables
     bool dashing = false;
     bool isJumping = false;
-    bool jumpInputReleased = true;
     int touchingWall = 0;
     int airJumpsLeft = 1;
-    float lastDirection = 1;
 
     #region Timers
     float lastGroundedTime;
     float lastJumpTime;
     float lastWJtime = 10;
     float lastDashTime = 10;
+    float lastAttackDashTime = 0;
     #endregion
 
     #endregion
@@ -125,7 +124,8 @@ public class CharacterMovement : MonoBehaviour
         lastJumpTime -= Time.fixedDeltaTime;
         lastWJtime += Time.fixedDeltaTime;
         lastDashTime += Time.fixedDeltaTime;
-        if(dashing == true && lastDashTime - _md.dashLerpDuration > 0)
+        lastAttackDashTime -= Time.fixedDeltaTime;
+        if(dashing == true && (lastDashTime - _md.dashLerpDuration > 0 && lastAttackDashTime < 0) )
         {
             StopDash();
         }
@@ -171,7 +171,6 @@ public class CharacterMovement : MonoBehaviour
         lastGroundedTime = 0;
         lastJumpTime = 0;
         isJumping = true;
-        jumpInputReleased = false;
     }
 
     void WJ(int i)
@@ -200,6 +199,14 @@ public class CharacterMovement : MonoBehaviour
     {
         _rb.velocity = Vector3.zero;
         dashing = false;
+    }
+
+    public void DashAttack(float force, float duration)
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(Direction * force * Vector2.right, ForceMode2D.Impulse);
+        lastAttackDashTime = duration;
+        dashing = true;
     }
 
 
@@ -242,8 +249,6 @@ public class CharacterMovement : MonoBehaviour
         {
             _rb.AddForce(Vector2.down * _rb.velocity.y * (1 - _md.jumpCutMultiplier), ForceMode2D.Impulse);
         }
-
-        jumpInputReleased = true;
         lastJumpTime = 0;
 
         //lastJumpTime = _md.JumpBufferTime;
