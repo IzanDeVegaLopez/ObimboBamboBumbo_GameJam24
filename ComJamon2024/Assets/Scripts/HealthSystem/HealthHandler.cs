@@ -14,9 +14,9 @@ public class HealthHandler : MonoBehaviour
 
     private bool _blocking;
     
-    UnityEvent onTakeDamage = new UnityEvent();
-    UnityEvent onHeal = new UnityEvent();
-    UnityEvent OnDeath = new UnityEvent();
+    public UnityEvent onTakeDamage = new UnityEvent();
+    public UnityEvent onHeal = new UnityEvent();
+    public UnityEvent OnDeath = new UnityEvent();
 
     private void Start()
     {

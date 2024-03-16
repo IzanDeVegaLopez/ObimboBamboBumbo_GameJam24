@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
     private AttackPerformer _attPerf;
     private AbilityHandler _abiHan;
 
+    bool heal = false;
+
     private PlayerControls _controls;
     #endregion
 
@@ -75,12 +77,14 @@ public class InputManager : MonoBehaviour
 
     public void SpecialAbility(InputAction.CallbackContext context)
     {
-        _abiHan.ExecuteAbility();
+        if (!heal) _abiHan.ExecuteAbility();
+        else heal = false;
     }
 
     public void Heal(InputAction.CallbackContext context)
     {
-        Debug.Log("hola me estoy curando");
+        heal = true;
+        _abiHan.HealAbility();
     }
     #endregion
 

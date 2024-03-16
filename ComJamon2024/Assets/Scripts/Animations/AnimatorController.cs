@@ -11,6 +11,8 @@ public class AnimatorController : MonoBehaviour
     {
         _anim = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        Debug.Log(_anim);
+        Debug.Log(_spriteRenderer);
     }
 
     private void FixedUpdate()
