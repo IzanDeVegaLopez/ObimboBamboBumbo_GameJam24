@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8024945bf53394094911d889bebc76, type: 3}
   m_Name: DashAttack
   m_EditorClassIdentifier: 
-  HitboxPosition: {x: -2, y: 0, z: 0}
+  HitboxPosition: {x: -2, y: 0.5, z: 0}
   HitboxSize: {x: 5, y: 1, z: 0}
   ExtraVariable: 0
   TargetLayerMask:

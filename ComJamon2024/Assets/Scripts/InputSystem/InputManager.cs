@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     #region references
     private CharacterMovement _charMov;
     private AttackPerformer _attPerf;
-    //private AbilityHandler _abiHan;
+    private AbilityHandler _abiHan;
 
     private PlayerControls _controls;
     #endregion
@@ -73,7 +73,7 @@ public class InputManager : MonoBehaviour
 
     public void SpecialAbility(InputAction.CallbackContext context)
     {
-        //_abiHan.ExecuteAbility();
+        _abiHan.ExecuteAbility();
     }
     #endregion
 
@@ -88,6 +88,6 @@ public class InputManager : MonoBehaviour
     {
         _charMov = GetComponent<CharacterMovement>();  
         _attPerf = GetComponent<AttackPerformer>();
-        //_abiHan = GetComponent<AbilityHandler>();
+        _abiHan = GetComponent<AbilityHandler>();
     }
 }
