@@ -23,7 +23,8 @@ public class InputManager : MonoBehaviour
         _controls.Player.Jump.canceled += JumpReleased;
         _controls.Player.Dash.performed += Dash;
         _controls.Player.BasicAttack.performed += BasicAttack;
-        _controls.Player.SpecialAbility.performed += SpecialAbility;
+        _controls.Player.SpecialAbility.canceled += SpecialAbility;
+        _controls.Player.Heal.performed += Heal;
     }
 
     private void OnDisable()
@@ -36,7 +37,8 @@ public class InputManager : MonoBehaviour
         _controls.Player.Jump.canceled -= JumpReleased;
         _controls.Player.Dash.performed -= Dash;
         _controls.Player.BasicAttack.performed -= BasicAttack;
-        _controls.Player.SpecialAbility.performed -= SpecialAbility;
+        _controls.Player.SpecialAbility.canceled -= SpecialAbility;
+        _controls.Player.Heal.performed -= Heal;
 
     }
 
@@ -74,6 +76,11 @@ public class InputManager : MonoBehaviour
     public void SpecialAbility(InputAction.CallbackContext context)
     {
         _abiHan.ExecuteAbility();
+    }
+
+    public void Heal(InputAction.CallbackContext context)
+    {
+        Debug.Log("hola me estoy curando");
     }
     #endregion
 
