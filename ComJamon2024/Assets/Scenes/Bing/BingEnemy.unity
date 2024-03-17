@@ -1804,11 +1804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484936218456152834, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2925701
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4484936218456152834, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21014667
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 4484936218456152834, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1979,7 +1979,7 @@ MonoBehaviour:
   onHordeFinished:
     m_PersistentCalls:
       m_Calls: []
-  nMaxEnemies: 10
+  nMaxEnemies: 45
   totalEnemies: 0
   killedEnemies: 0
 --- !u!114 &1870468372
@@ -2193,8 +2193,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5907717193770339954, guid: eef63c89a2a1a4d4d927968ac207bd3f, type: 3}
+      propertyPath: enemyCTR
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907717193770339954, guid: eef63c89a2a1a4d4d927968ac207bd3f, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907717193770339954, guid: eef63c89a2a1a4d4d927968ac207bd3f, type: 3}
+      propertyPath: playerCTR
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8802729448126346032, guid: eef63c89a2a1a4d4d927968ac207bd3f, type: 3}
       propertyPath: m_LocalPosition.x

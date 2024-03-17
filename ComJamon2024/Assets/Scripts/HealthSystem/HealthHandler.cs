@@ -39,6 +39,11 @@ public class HealthHandler : MonoBehaviour
         //Debug.Log(damage);
         if (!_blocking)
         {
+            //si es personaje, no enemigos
+            if (_myGameObject.GetComponent<CharacterMovement>() != null)
+            {
+                AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerGotHit, AudioManager.Instance.playerCTR);
+            }
             _currentHealth -= damage;
 
             Hitstop.Instance.Stop(timeStop);
@@ -81,6 +86,7 @@ public class HealthHandler : MonoBehaviour
         {
             HordeManager.Instance.AddKilledEnemy();
             WaveHandler.Instance.SetNenemies(-1);
+            AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.enemyDead, AudioManager.Instance.enemyCTR);
         }
         Destroy(gameObject);
     }
