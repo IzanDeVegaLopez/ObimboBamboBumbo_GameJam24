@@ -23,17 +23,6 @@ public class MenuManager : MonoBehaviour
     private InputManager _inputM;
 
 
-    //private void OnEnable()
-    //{
-    //    _inputM.controls.UI.CloseMenu.performed += CloseMenu;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _inputM.controls.UI.CloseMenu.performed -= CloseMenu;
-    //}
-
-
     #region methods
     public void CloseMenu(InputAction.CallbackContext context)
     {
@@ -44,8 +33,8 @@ public class MenuManager : MonoBehaviour
     {
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
-        _inputM.controls.UI.Disable();
         _inputM.controls.Player.Enable();
+        _inputM.controls.UI.Disable();
     }
 
     public void OpenMenu(int menuId)
@@ -53,13 +42,8 @@ public class MenuManager : MonoBehaviour
         _menuList[menuId].SetActive(true);
         _firstSelected[menuId].Select();
 
-        _inputM.controls.Player.Disable();
         _inputM.controls.UI.Enable();
+        _inputM.controls.Player.Disable();
     }
     #endregion
-
-    private void Start()
-    {
-        _inputM.controls.UI.CloseMenu.performed += CloseMenu;
-    }
 }
