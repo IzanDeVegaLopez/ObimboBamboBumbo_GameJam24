@@ -12,6 +12,7 @@ public class DashAbility : AbilityData
     {
         if (manaManager.currentMana >= manaCost)
         {
+            CharacterMovement.CancelGravity  = true;
             abilityHolder.GetComponent<CharacterMovement>().DashAttack(_dashForce, _duration);
             //abilityHolder.GetComponent<AnimatorController>().StartAttackAnim(-1);
         }

@@ -44,6 +44,7 @@ public class CharacterMovement : MonoBehaviour
     public static bool Anchored;
     //public float direction { get => Direction; }
     #endregion
+    public static bool CancelGravity = false;
 
     void Awake()
     {
@@ -112,7 +113,7 @@ public class CharacterMovement : MonoBehaviour
 
 
         #region Jump Gravity
-        if (touchingWall != 0 || (lastDashTime < _md.dashLerpDuration))
+        if (touchingWall != 0 || (lastDashTime < _md.dashLerpDuration) || CancelGravity)
         {
             _rb.gravityScale = 0;
         }
