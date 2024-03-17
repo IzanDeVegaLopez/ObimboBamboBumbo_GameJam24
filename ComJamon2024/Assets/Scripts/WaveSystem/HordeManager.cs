@@ -15,6 +15,7 @@ public class HordeManager : MonoBehaviour
     public int totalEnemies = 0;
     [SerializeField]
     private int killedEnemies = 0;
+    private int BGMchanger = 1;
     #endregion
 
     private static HordeManager _instance;
@@ -32,6 +33,15 @@ public class HordeManager : MonoBehaviour
         {
             onHordeFinished?.Invoke();
         }
+        else if (killedEnemies % (nMaxEnemies / 3) == 0 && killedEnemies != 0)
+        {
+            if (BGMchanger < SoundBankComponent.Instance.BGM.Length)
+            {
+                AudioManager.Instance.ChangeBGM(SoundBankComponent.Instance.BGM[BGMchanger]);
+                BGMchanger++;
+            }
+            
+        }
     }
     #endregion
 
@@ -46,10 +56,5 @@ public class HordeManager : MonoBehaviour
         {
             Destroy(_instance);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

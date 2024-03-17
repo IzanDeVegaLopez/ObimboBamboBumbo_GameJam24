@@ -45,6 +45,7 @@ public class AbilityHandler : MonoBehaviour
     public void HealAbility()
     {
         _abilities[0].UseAbility();
+        AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerHeal, AudioManager.Instance.playerCTR);
     }
 
     public void returnToNormalParryCounter()

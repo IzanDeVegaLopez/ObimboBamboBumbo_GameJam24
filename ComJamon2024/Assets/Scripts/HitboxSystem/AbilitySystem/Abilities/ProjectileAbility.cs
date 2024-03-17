@@ -17,6 +17,8 @@ public class ProjectileAbility : AbilityData
         _chMov.SetAnchored(true);
 
         Instantiate(_projectilePrefab, _chMov.transform.position + 0.5f * Vector3.up, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
+        int i = Random.Range(0, SoundBankComponent.Instance.playerShoot.Length);
+        AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerShoot[i], AudioManager.Instance.playerCTR);
         
     }
 
