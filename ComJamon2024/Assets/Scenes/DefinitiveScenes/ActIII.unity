@@ -350,7 +350,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  nMaxEnemies: 10
+  nMaxEnemies: 30
   totalEnemies: 0
   killedEnemies: 0
 --- !u!114 &156627863
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nEnemy: 0
-  nPerWave: 3
+  nPerWave: 8
   enemies: []
 --- !u!4 &156627864
 Transform:
