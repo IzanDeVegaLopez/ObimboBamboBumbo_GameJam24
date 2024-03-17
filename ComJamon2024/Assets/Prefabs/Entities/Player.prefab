@@ -427,11 +427,6 @@ GameObject:
   - component: {fileID: 4806274239893500802}
   - component: {fileID: 4561617130930306434}
   - component: {fileID: 3763367172310530041}
-  - component: {fileID: 3376727294968716012}
-  - component: {fileID: 3408640570807797633}
-  - component: {fileID: 6895405241313192232}
-  - component: {fileID: 6214807801524612173}
-  - component: {fileID: 5324059902314607608}
   - component: {fileID: 5024022091371885703}
   - component: {fileID: 5724896810437912088}
   - component: {fileID: 1804777475423832877}
@@ -819,77 +814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuManager: {fileID: 0}
---- !u!114 &3376727294968716012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464d20d3c5f7d4b408833c8513c166c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mana: {fileID: 11400000, guid: 1827875272611ca44a614f5599a57840, type: 2}
-  _abilities:
-  - {fileID: 3408640570807797633}
-  - {fileID: 6895405241313192232}
-  - {fileID: 6214807801524612173}
-  - {fileID: 5324059902314607608}
-  _abilityIndex: 1
---- !u!114 &3408640570807797633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e09355c43f5c643bd09b82edb9fade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 9fc8055e1aadc28468cb4ca92116e9aa, type: 2}
---- !u!114 &6895405241313192232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e09355c43f5c643bd09b82edb9fade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: c60f0f1221316da44a61150bad9cb62d, type: 2}
---- !u!114 &6214807801524612173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e09355c43f5c643bd09b82edb9fade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 8fb801271a70a41448902094f1796cb4, type: 2}
---- !u!114 &5324059902314607608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085207926559294412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e09355c43f5c643bd09b82edb9fade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: cfdc4590d2cea424da2857223c93ed35, type: 2}
 --- !u!114 &5024022091371885703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 5
   _currentHealth: 3
+  _blocking: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -949,6 +874,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _manaManager: {fileID: 11400000, guid: 1827875272611ca44a614f5599a57840, type: 2}
+  manaGivenOnDeath: 5
 --- !u!114 &5724896810437912088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,6 +907,7 @@ MonoBehaviour:
   - {fileID: 8461318897892283350}
   - {fileID: 4958066186854117958}
   - {fileID: 2786119293772737}
+  _selector: {fileID: 11400000, guid: c587bd767263b6948aa6ffbd1822efb3, type: 2}
   _abilityIndex: 3
 --- !u!114 &6883314389147768516
 MonoBehaviour:
@@ -1045,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d39430991cae654a9de1893d6719f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneManagement: {fileID: 11400000, guid: 547f457171ac0ae4b9b3549e6cf7b976, type: 2}
 --- !u!1 &6820673636671460770
 GameObject:
   m_ObjectHideFlags: 0

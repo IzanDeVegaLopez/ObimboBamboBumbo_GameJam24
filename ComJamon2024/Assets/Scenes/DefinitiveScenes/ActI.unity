@@ -2225,6 +2225,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1804777475423832877, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _selector
+      value: 
+      objectReference: {fileID: 11400000, guid: c587bd767263b6948aa6ffbd1822efb3, type: 2}
+    - target: {fileID: 3376727294968716012, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _selector
+      value: 
+      objectReference: {fileID: 11400000, guid: c587bd767263b6948aa6ffbd1822efb3, type: 2}
     - target: {fileID: 3763367172310530041, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: _menuManager
       value: 
@@ -2273,7 +2281,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4757835901488361999, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: sceneManagement
+      value: 
+      objectReference: {fileID: 11400000, guid: 547f457171ac0ae4b9b3549e6cf7b976, type: 2}
+    - target: {fileID: 5024022091371885703, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _manaManager
+      value: 
+      objectReference: {fileID: 11400000, guid: 1827875272611ca44a614f5599a57840, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3376727294968716012, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+    - {fileID: 3408640570807797633, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+    - {fileID: 6895405241313192232, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+    - {fileID: 6214807801524612173, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+    - {fileID: 5324059902314607608, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
