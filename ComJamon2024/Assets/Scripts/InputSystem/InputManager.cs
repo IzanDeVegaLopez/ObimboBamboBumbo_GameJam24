@@ -103,8 +103,7 @@ public class InputManager : MonoBehaviour
     #region menus
     public void PauseGame(InputAction.CallbackContext context)
     {
-        // Pausar juego
-        _menuManager.OpenMenu(0);
+        GameManager.Instance.PauseGame();
     }
     #endregion
 
