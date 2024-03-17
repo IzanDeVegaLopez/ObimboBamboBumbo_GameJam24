@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: a4493b9285a8427418e97aab6b0d93e1, type: 2}
+  forceImpulse: 6
   _state: 0
 --- !u!114 &7477574421832111477
 MonoBehaviour:
