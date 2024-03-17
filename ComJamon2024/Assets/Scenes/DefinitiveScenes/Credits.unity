@@ -387,9 +387,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bing Wang
+  m_text: 'Bingcheng Wang
 
-    -Spotify: bingoo30'
+    -Spotify: Bingoo30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
   m_sharedMaterial: {fileID: -3360414056959214660, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Threadening Theatre, an Obimbo bambo bumbo production
+  m_text: Threadening Theatre, an Obimbo Bambo Bumbo production
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 208bc0e002ed91649b544694ab377fe3, type: 2}
   m_sharedMaterial: {fileID: 7888571999946830162, guid: 208bc0e002ed91649b544694ab377fe3, type: 2}
@@ -1648,7 +1648,7 @@ MonoBehaviour:
 
     Andrea Aparicio Lopez
 
-    Bing
+    Bingcheng
     Wang
 
     Alec Sanchez Gaitan'
