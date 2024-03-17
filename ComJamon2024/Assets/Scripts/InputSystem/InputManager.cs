@@ -16,6 +16,11 @@ public class InputManager : MonoBehaviour
 
 
     private PlayerControls _controls;
+
+    public PlayerControls controls { 
+        get { return _controls; } 
+        set { _controls = value; } 
+    }
     #endregion
 
     private void OnEnable()
@@ -45,11 +50,6 @@ public class InputManager : MonoBehaviour
         _controls.Player.Abilities.performed -= Abilities;
         _controls.Player.Pause.performed -= PauseGame;
 
-    }
-    public void Prueba(InputAction.CallbackContext context)
-    {
-        if (context.interaction is PressInteraction) Debug.Log("press");
-        else Debug.Log("hold");
     }
 
 
@@ -104,7 +104,7 @@ public class InputManager : MonoBehaviour
     public void PauseGame(InputAction.CallbackContext context)
     {
         // Pausar juego
-        // Abrir menu de pausa
+        MenuManager.Instance.OpenMenu(0);
     }
     #endregion
 
