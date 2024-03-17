@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM()
     {
         audioSource.Play();
-        Debug.Log("Reproduciendo");
     }
     public void PlaySFX(AudioClip clip, float volume)
     {

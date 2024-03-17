@@ -9,6 +9,10 @@ public class MovementData : ScriptableObject
     public float moveSpeed = 10f;
     public float acceleration = 10f;
     public float decceleration = 10f;
+    [Range(0f, 1f)]
+    public float accMultiplierAir = 1f;
+    [Range(0f, 1f)]
+    public float decMultiplierAir = 1f;
 
 
     [Header("Jump")]

@@ -9,8 +9,9 @@ public class AttackPerformer : MonoBehaviour
     bool _isAttacking = false;
     [SerializeField]
     bool _isCancellable = false;
-    [SerializeField]
-    bool _lastAttackHit = false;
+
+    float _attackInputBuffer = 0.2f;
+    float _lastTimeAttackPressed = -10;
 
     AnimatorController _anim;
     CharacterMovement _chMov;
@@ -24,15 +25,20 @@ public class AttackPerformer : MonoBehaviour
 
     public void TryAttacking()
     {
-        //Esto debería llamar a que empiece la animación.
-        if ((!_isAttacking || _isCancellable) && !CharacterMovement.Anchored)
+        _lastTimeAttackPressed = Time.time;
+    }
+
+    private void Update()
+    {
+        if ((!_isAttacking || _isCancellable) && !CharacterMovement.Anchored && (Time.time - _lastTimeAttackPressed < _attackInputBuffer))
         {
             //_isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
+            _lastTimeAttackPressed = 0;
             _anim.PlayCutEffect();
+            _chMov.BlockMovement(true);
 
         }
-
     }
 
     //Se llama en el primer frame de animacion
@@ -42,10 +48,17 @@ public class AttackPerformer : MonoBehaviour
         _isAttacking = true;
     }
 
+    public void PerformAttackComboCancellable()
+    {
+        _comboSystem.Attack();
+        _isCancellable = true;
+        _chMov.BlockMovement(false);
+    }
+
     public void PerformAttack()
     {
-        _lastAttackHit = _comboSystem.Attack();
-        _isCancellable = true;
+        _comboSystem.Attack();
+        _chMov.BlockMovement(false);
     }
 
     public void EndAttack()
