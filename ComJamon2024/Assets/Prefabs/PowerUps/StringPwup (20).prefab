@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102272299622229668, guid: 52a74eb15802dea4e9e6d7e58a4fb1f9, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 2766399847194420300, guid: 52a74eb15802dea4e9e6d7e58a4fb1f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.32
@@ -50,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6104178549612579927, guid: 52a74eb15802dea4e9e6d7e58a4fb1f9, type: 3}
       propertyPath: m_Name
-      value: StringPwup Variant
+      value: StringPwup (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986112844008931087, guid: 52a74eb15802dea4e9e6d7e58a4fb1f9, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6990068742800962983, guid: 52a74eb15802dea4e9e6d7e58a4fb1f9, type: 3}
       propertyPath: _manaToAdd

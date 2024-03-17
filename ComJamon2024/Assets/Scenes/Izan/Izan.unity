@@ -1494,6 +1494,10 @@ PrefabInstance:
       propertyPath: _blocking
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5024022091371885703, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _manaManager
+      value: 
+      objectReference: {fileID: 11400000, guid: 1827875272611ca44a614f5599a57840, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
