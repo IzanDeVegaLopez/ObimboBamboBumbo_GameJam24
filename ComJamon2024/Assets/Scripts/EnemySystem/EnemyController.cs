@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer _mySpriteRenderer;
     #endregion
     #region properties
-
+    [SerializeField]
+    float forceImpulse;
     //para testear
     private float elapsedTime = 0f;
     private float elapsedTime2 = 0f;
@@ -70,6 +71,7 @@ public class EnemyController : MonoBehaviour
             elapsedTime += Time.fixedDeltaTime;
             if (elapsedTime > duration)
             {
+                _rb.AddForce(Dir * Vector3.right * forceImpulse ,ForceMode2D.Impulse);
                 _enemyAttackHandler.EnemyAttacks();
                 //Debug.Log("Miau");
                 _state = states.wait;

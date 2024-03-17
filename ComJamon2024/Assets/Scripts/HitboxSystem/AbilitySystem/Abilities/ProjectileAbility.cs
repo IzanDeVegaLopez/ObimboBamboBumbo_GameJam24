@@ -15,6 +15,7 @@ public class ProjectileAbility : AbilityData
     {
         _chMov = abilityHolder.GetComponent<CharacterMovement>();
         _chMov.SetAnchored(true);
+        CharacterMovement.CancelGravity = true;
 
         Instantiate(_projectilePrefab, _chMov.transform.position + 0.5f * Vector3.up, Quaternion.identity).GetComponent<NeedleProjectileComponent>().GetReferenceToProjectileAbility(this);
         int i = Random.Range(0, SoundBankComponent.Instance.playerShoot.Length);
@@ -25,6 +26,7 @@ public class ProjectileAbility : AbilityData
     public void Finished()
     {
         _chMov.SetAnchored(false);
+        CharacterMovement.CancelGravity = false;
     }
 
 }
