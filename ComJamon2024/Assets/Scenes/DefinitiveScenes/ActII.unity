@@ -772,6 +772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Acto2
       objectReference: {fileID: 0}
+    - target: {fileID: 6724149429533353007, guid: f3c735ae17015924695c6771aee9c975, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
