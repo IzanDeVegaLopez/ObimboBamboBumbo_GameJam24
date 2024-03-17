@@ -613,6 +613,7 @@ MonoBehaviour:
   _spawnTransform: {fileID: 301057224}
   _enemy:
   - {fileID: 5058484874198003482, guid: 66cf05f4863f26e46b8b014ecfc49ec2, type: 3}
+  - {fileID: 5058484874198003482, guid: 3cb54e9e5c3d31e42ac4e2749a1c108c, type: 3}
 --- !u!4 &301057224
 Transform:
   m_ObjectHideFlags: 0
@@ -1019,9 +1020,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -758513227
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: bca7e8bbc8d092d4e8e1246ef2db06ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1536,9 +1537,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -758513227
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: bca7e8bbc8d092d4e8e1246ef2db06ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1833,6 +1834,7 @@ MonoBehaviour:
   _spawnTransform: {fileID: 1590413143}
   _enemy:
   - {fileID: 5058484874198003482, guid: 66cf05f4863f26e46b8b014ecfc49ec2, type: 3}
+  - {fileID: 5058484874198003482, guid: 3cb54e9e5c3d31e42ac4e2749a1c108c, type: 3}
 --- !u!4 &1590413143
 Transform:
   m_ObjectHideFlags: 0

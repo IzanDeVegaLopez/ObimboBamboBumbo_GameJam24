@@ -24,8 +24,8 @@ public class EnemySpawnerComponent : MonoBehaviour
     {
         if (HordeManager.Instance.totalEnemies < HordeManager.Instance.nMaxEnemies && WaveHandler.Instance.nEnemy < WaveHandler.Instance.nPerWave)
         {
-            //int i = Random.Range(0, _enemy.Count);
-            GameObject enemy = Instantiate(_enemy[0], _spawnTransform.position, transform.rotation);
+            int i = Random.Range(0, _enemy.Count);
+            GameObject enemy = Instantiate(_enemy[i], _spawnTransform.position, transform.rotation);
             WaveHandler.Instance.RegisterEnemy(enemy);
         }
         
