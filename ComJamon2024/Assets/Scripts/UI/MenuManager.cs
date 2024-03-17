@@ -7,19 +7,10 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MenuManager : MonoBehaviour
 {
-
-    private static MenuManager _instance;
-    public static MenuManager Instance
-    {
-        get { return _instance; }
-    }
-
     /// <summary>
     /// Lista de menús:
     /// 0 - Pausa
-    /// 1 - Acto 1
-    /// 2 - Acto 2
-    /// 3 - Acto 3
+    /// 1 - Acto
     /// </summary>
     [SerializeField]
     private GameObject[] _menuList;
@@ -59,19 +50,13 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenu(int menuId)
     {
-        _menuList[Mathf.Abs(menuId)].SetActive(true);
-        _firstSelected[Mathf.Abs(menuId)].Select();
+        _menuList[menuId].SetActive(true);
+        _firstSelected[menuId].Select();
 
         _inputM.controls.Player.Disable();
         _inputM.controls.UI.Enable();
     }
     #endregion
-
-    void Awake()
-    {
-        if (_instance != null) Destroy(gameObject);
-        else _instance = this;
-    }
 
     private void Start()
     {

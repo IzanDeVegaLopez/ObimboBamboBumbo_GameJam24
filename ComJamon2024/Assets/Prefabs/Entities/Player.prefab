@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16494dbb2a212f4e82f00fd04d5e8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuList: []
+  _menuManager: {fileID: 0}
 --- !u!114 &3376727294968716012
 MonoBehaviour:
   m_ObjectHideFlags: 0

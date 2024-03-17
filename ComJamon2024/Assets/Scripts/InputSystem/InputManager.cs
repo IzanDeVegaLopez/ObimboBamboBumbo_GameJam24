@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     private AbilityHandler _abiHan;
 
     [SerializeField]
-    private GameObject[] _menuList;
+    private MenuManager _menuManager;
 
 
     private PlayerControls _controls;
@@ -104,7 +104,7 @@ public class InputManager : MonoBehaviour
     public void PauseGame(InputAction.CallbackContext context)
     {
         // Pausar juego
-        MenuManager.Instance.OpenMenu(0);
+        _menuManager.OpenMenu(0);
     }
     #endregion
 
