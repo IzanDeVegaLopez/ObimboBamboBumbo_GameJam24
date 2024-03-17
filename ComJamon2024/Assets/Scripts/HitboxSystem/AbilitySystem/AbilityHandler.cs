@@ -8,6 +8,8 @@ public class AbilityHandler : MonoBehaviour
 
     [SerializeField] AbilityHolder[] _abilities = new AbilityHolder[4];
 
+    [SerializeField] AbilitySelector _selector;
+
     AnimatorController _anim;
 
     CharacterMovement _chMov;
@@ -17,7 +19,7 @@ public class AbilityHandler : MonoBehaviour
 
     [SerializeField]
     [Range(1,3)]
-    private int _abilityIndex = 1; //El 0 está reservado para la HealAbility
+    private int _abilityIndex; //El 0 está reservado para la HealAbility
     public int abilityIndex { set => _abilityIndex = value; }
 
     void Start()
@@ -26,6 +28,7 @@ public class AbilityHandler : MonoBehaviour
         _anim = GetComponent<AnimatorController>();
         _chMov = GetComponent<CharacterMovement>();
         _healthHandler = GetComponent<HealthHandler>();
+        _abilityIndex = _selector.abilityIndex;
     }
 
     public void ExecuteAbility()
