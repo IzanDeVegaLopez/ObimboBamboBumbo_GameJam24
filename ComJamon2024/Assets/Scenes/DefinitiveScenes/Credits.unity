@@ -314,9 +314,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bing Wang
+  m_text: 'Bingcheng Wang
 
-    -Spotify: bingoo30'
+    -Spotify: Bingoo30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -851,6 +851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManagement: {fileID: 11400000, guid: 547f457171ac0ae4b9b3549e6cf7b976, type: 2}
+  isGameplay: 0
+  _menuManager: {fileID: 0}
 --- !u!4 &900754544
 Transform:
   m_ObjectHideFlags: 0
@@ -1567,7 +1569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Izan de Vega L\xF3pez\nLucas Rodr\xEDguez Castro\nAndrea Aparicio L\xF3pez\nBing
+  m_text: "Izan de Vega L\xF3pez\nLucas Rodr\xEDguez Castro\nAndrea Aparicio L\xF3pez\nBingcheng
     Wang\nAlec S\xE1nchez Gait\xE1n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
