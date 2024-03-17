@@ -68,5 +68,6 @@ public class AttackPerformer : MonoBehaviour
         _anim.AttackFinished();
         _comboSystem.resetComboState();
         _chMov.SetAnchored(false);
+        CharacterMovement.CancelGravity = false;
     }
 }
