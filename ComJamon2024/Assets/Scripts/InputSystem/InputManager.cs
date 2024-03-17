@@ -105,7 +105,7 @@ public class InputManager : MonoBehaviour
     #region menus
     public void PauseGame(InputAction.CallbackContext context)
     {
-        GameManager.Instance.PauseGame();
+        //GameManager.Instance.PauseGame();
     }
     #endregion
 
