@@ -9,6 +9,7 @@ public class AbilityIntermediate : MonoBehaviour
 
     public void AbilitySelected()
     {
+        Debug.Log("Selected " + gameObject.name);
         abilitySelector.abilityIndex = abilitySelected;
     }
 }
