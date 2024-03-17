@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 1493356348}
   - component: {fileID: 1493356349}
   - component: {fileID: 1493356350}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 1753215664}
   - component: {fileID: 1753215665}
   - component: {fileID: 1753215666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,6 +1430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376727294968716012, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _abilityIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4085207926559294412, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1486,6 +1490,10 @@ PrefabInstance:
       propertyPath: _effectAnimator
       value: 
       objectReference: {fileID: 2141409503}
+    - target: {fileID: 5024022091371885703, guid: 082b9f5b08ce170438e3e8d9de68eec4, type: 3}
+      propertyPath: _blocking
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

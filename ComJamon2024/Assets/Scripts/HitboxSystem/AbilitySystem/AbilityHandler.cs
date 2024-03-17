@@ -34,6 +34,7 @@ public class AbilityHandler : MonoBehaviour
         //_mana.currentMana -= _abilities[_abilityIndex].aData.manaCost;
         _abilities[_abilityIndex].UseAbility();
         _anim.StartAttackAnim(-_abilityIndex);
+        _mana.currentMana -= _abilities[_abilityIndex].aData.manaCost;
 
 
     }
@@ -41,6 +42,11 @@ public class AbilityHandler : MonoBehaviour
     public void HealAbility()
     {
         _abilities[0].UseAbility();
+    }
+
+    public void returnToNormalParryCounter()
+    {
+        _anim.ParryCounter(false);
     }
 
     public void FinishBlockingStance()

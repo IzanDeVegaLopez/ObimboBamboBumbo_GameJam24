@@ -12,6 +12,7 @@ public class SliderController : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
+        manaManager.currentMana = manaManager.maxMana;
     }
 
     // Update is called once per frame

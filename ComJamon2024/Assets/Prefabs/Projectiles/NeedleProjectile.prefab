@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a207ef1dda1eb4b4dab24785ce3d1045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxDistance: 10
-  _totalTime: 1.5
+  damage: 1
+  _maxDistance: 8
+  _totalTime: 1
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128

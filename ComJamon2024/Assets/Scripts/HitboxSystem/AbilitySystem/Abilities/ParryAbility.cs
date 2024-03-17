@@ -11,13 +11,10 @@ public class ParryAbility : AbilityData
     //La animación finaliza el ataque y llama al counter attack de abilityAttacks
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
-        if (manaManager.currentMana >= manaCost)
-        {
-            _chMov = abilityHolder.GetComponent<CharacterMovement>();
-            _chMov.SetAnchored(true);
-            _myHealthHandler = abilityHolder.GetComponent<HealthHandler>();
-            _myHealthHandler.SetBlock(true);
-            manaManager.currentMana -= manaCost;
-        }
+        _chMov = abilityHolder.GetComponent<CharacterMovement>();
+        _chMov.SetAnchored(true);
+        _myHealthHandler = abilityHolder.GetComponent<HealthHandler>();
+        _myHealthHandler.SetBlock(true);
+        
     }
 }

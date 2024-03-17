@@ -10,6 +10,13 @@ public class AbilityAttack : HitboxHandler
     [SerializeField]
     HitboxData _dashAttack;
 
+    AnimatorController _anim;
+
+    private void Start()
+    {   
+        _anim = GetComponent<AnimatorController>();
+    }
+
     public void ParryAttack()
     {
         HitEnemies(_parryCounterAttack);
@@ -25,6 +32,11 @@ public class AbilityAttack : HitboxHandler
         #endregion
 
         Debug.Log(enemiesReached.Length != 0);
+    }
+
+    public void PerformParryAttack()
+    {
+        _anim.ParryCounter(true);
     }
 
     public void DashAttack()

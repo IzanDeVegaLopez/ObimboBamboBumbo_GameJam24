@@ -14,7 +14,6 @@ public class DashAbility : AbilityData
         {
             abilityHolder.GetComponent<CharacterMovement>().DashAttack(_dashForce, _duration);
             //abilityHolder.GetComponent<AnimatorController>().StartAttackAnim(-1);
-            manaManager.currentMana -= manaCost;
         }
     }
 

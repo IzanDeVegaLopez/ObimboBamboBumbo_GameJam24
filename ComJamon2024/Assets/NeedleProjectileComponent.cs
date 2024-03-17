@@ -28,9 +28,9 @@ public class NeedleProjectileComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         if (_enemyLayer == (_enemyLayer|(1<< other.gameObject.layer)))
         {
+            Debug.Log(other);
             other.gameObject.GetComponent<HealthHandler>().TakeDamage(damage, hitstop);
         }
     }

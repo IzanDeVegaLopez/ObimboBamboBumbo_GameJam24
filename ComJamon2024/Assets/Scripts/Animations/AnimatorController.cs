@@ -30,6 +30,11 @@ public class AnimatorController : MonoBehaviour
         // Debug.Log(_spriteRenderer.flipX);
     }
 
+    public void ParryCounter(bool val)
+    {
+        _anim.SetBool("ParryCounter", val);
+    }
+
     public void StartAttackAnim(int i)
     {
         _anim.SetInteger("AttackIndex", i);

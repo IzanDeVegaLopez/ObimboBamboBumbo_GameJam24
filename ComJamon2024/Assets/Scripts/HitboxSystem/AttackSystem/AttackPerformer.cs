@@ -46,7 +46,6 @@ public class AttackPerformer : MonoBehaviour
     {
         _lastAttackHit = _comboSystem.Attack();
         _isCancellable = true;
-        Debug.Log(_lastAttackHit);
     }
 
     public void EndAttack()

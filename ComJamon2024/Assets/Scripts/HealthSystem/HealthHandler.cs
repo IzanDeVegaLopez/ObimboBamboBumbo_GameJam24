@@ -13,6 +13,7 @@ public class HealthHandler : MonoBehaviour
     private int _currentHealth = 3;
     public int currentHealth { get => _currentHealth; }
 
+    [SerializeField]
     private bool _blocking = false;
 
     private GameObject _myGameObject;
@@ -40,7 +41,7 @@ public class HealthHandler : MonoBehaviour
         else
         {
             SetBlock(false);
-            _abilityAttack.ParryAttack();
+            _abilityAttack.PerformParryAttack();
         }
     }
     public void Heal()
