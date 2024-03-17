@@ -22,11 +22,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private InputManager _inputM;
 
+    public InputManager inputM
+    {
+        get { return _inputM; }
+    }
+
 
     #region methods
     public void CloseMenu(InputAction.CallbackContext context)
     {
-        Debug.Log("cerrar menu");
         CloseMenu();
     }
     public void CloseMenu()
@@ -45,5 +49,7 @@ public class MenuManager : MonoBehaviour
         _inputM.controls.UI.Enable();
         _inputM.controls.Player.Disable();
     }
+
+    public void SelectButton() => _firstSelected[0].Select();
     #endregion
 }

@@ -30,6 +30,15 @@ public class GameManager : MonoBehaviour
         _menuManager.CloseMenu();
     }
 
+    public void PlayerInput()
+    {
+        _menuManager.inputM.SwitchToPlayer();
+    }    
+
+    public void UIInput()
+    {
+        _menuManager.inputM.SwitchToUI();
+    }
 
     void Awake()
     {

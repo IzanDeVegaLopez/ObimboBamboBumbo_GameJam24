@@ -8,7 +8,11 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
     [SerializeField] SceneManagement sceneManagement;
-    
+
+    public bool isGameplay;
+    [SerializeField]
+    private MenuManager _menuManager;
+
     public void Restart()
     {
         sceneManagement.actualScene = 9;
@@ -40,5 +44,10 @@ public class SceneHandler : MonoBehaviour
         sceneManagement.actualScene = 2;
         SceneManager.LoadScene(sceneBuildIndex: sceneManagement.actualScene);
         GameManager.Instance.FindMenuManager();
+    }
+
+    private void Start()
+    {
+        if (!isGameplay) _menuManager.SelectButton();
     }
 }

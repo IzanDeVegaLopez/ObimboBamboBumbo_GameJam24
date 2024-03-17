@@ -23,6 +23,8 @@ public class InputManager : MonoBehaviour
     }
     #endregion
 
+
+
     private void OnEnable()
     {
         _controls.Enable();
@@ -104,6 +106,20 @@ public class InputManager : MonoBehaviour
     public void PauseGame(InputAction.CallbackContext context)
     {
         GameManager.Instance.PauseGame();
+    }
+    #endregion
+
+    #region switch action maps
+    public void SwitchToPlayer()
+    {
+        _controls.UI.Disable();
+        _controls.Player.Enable();
+    }
+
+    public void SwitchToUI()
+    {
+        _controls.Player.Disable();
+        _controls.UI.Enable(); 
     }
     #endregion
 
