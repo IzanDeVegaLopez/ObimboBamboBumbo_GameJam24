@@ -285,6 +285,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1802192104}
     - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: isGameplay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
       propertyPath: _menuList.Array.size
       value: 1
       objectReference: {fileID: 0}

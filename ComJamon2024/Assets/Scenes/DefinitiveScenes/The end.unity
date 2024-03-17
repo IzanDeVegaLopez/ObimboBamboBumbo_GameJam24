@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 55, y: 68}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2760032
 MonoBehaviour:
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Muchas gracias por jugar Threadening Theatre. Si te han gustado el arte
+  m_text: "Muchas gracias por jugar Threadening Theatre. \nSi te han gustado el arte
     o la m\xFAsica considera visitar la pagina web del artista (fwoggydweller.carrd.co)
     y el spotify del m\xFAsico (bingoo30)"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
+  m_sharedMaterial: {fileID: -3360414056959214660, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -209,14 +209,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -259,6 +259,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2760030}
   m_CullTransparentMesh: 1
+--- !u!1001 &44318988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2155138451217326764, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_Name
+      value: MenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22348133
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4376188
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0069901706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592742133653727168, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: _menuList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: _menuList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2007641918}
+    - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: _firstSelected.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193253769801006772, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
+      propertyPath: _firstSelected.Array.data[0]
+      value: 
+      objectReference: {fileID: 1593652219}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5356963e7c6b0644da32216be4c0bed8, type: 3}
 --- !u!1 &514868552
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,8 +504,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: FIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 208bc0e002ed91649b544694ab377fe3, type: 2}
+  m_sharedMaterial: {fileID: 7888571999946830162, guid: 208bc0e002ed91649b544694ab377fe3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -563,10 +636,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Volver al men\xFA principal"
+  m_text: VOLVER AL MENU PRINCIPAL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
+  m_sharedMaterial: {fileID: -3360414056959214660, guid: f34d35a8aea6b844faba8117350b0158, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -590,13 +663,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -677,7 +750,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17, y: -262}
-  m_SizeDelta: {x: 343.048, y: 92.6217}
+  m_SizeDelta: {x: 360, y: 92.6217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1593652219
 MonoBehaviour:
@@ -809,7 +882,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.4716981, g: 0.08677466, b: 0.08677466, a: 0}
+  m_BackGroundColor: {r: 0.5566038, g: 0.23839444, b: 0.23839444, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -977,3 +1050,4 @@ SceneRoots:
   - {fileID: 2007641922}
   - {fileID: 577739975}
   - {fileID: 514868554}
+  - {fileID: 44318988}

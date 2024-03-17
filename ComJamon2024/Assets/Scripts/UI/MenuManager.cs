@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
         get { return _inputM; }
     }
 
+    public bool isGameplay;
 
     #region methods
     public void CloseMenu(InputAction.CallbackContext context)
@@ -52,4 +53,9 @@ public class MenuManager : MonoBehaviour
 
     public void SelectButton() => _firstSelected[0].Select();
     #endregion
+
+    private void Start()
+    {
+        if (!isGameplay) SelectButton();
+    }
 }

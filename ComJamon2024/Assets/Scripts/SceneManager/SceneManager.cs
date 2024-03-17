@@ -9,9 +9,7 @@ public class SceneHandler : MonoBehaviour
 {
     [SerializeField] SceneManagement sceneManagement;
 
-    public bool isGameplay;
-    [SerializeField]
-    private MenuManager _menuManager;
+
 
     public void Restart()
     {
@@ -46,8 +44,5 @@ public class SceneHandler : MonoBehaviour
         GameManager.Instance.FindMenuManager();
     }
 
-    private void Start()
-    {
-        if (!isGameplay) _menuManager.SelectButton();
-    }
+
 }
