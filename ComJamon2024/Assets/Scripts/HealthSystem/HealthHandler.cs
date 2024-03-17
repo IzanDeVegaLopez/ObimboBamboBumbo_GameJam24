@@ -24,13 +24,15 @@ public class HealthHandler : MonoBehaviour
         _abilityAttack = GetComponent<AbilityAttack>();
         _myGameObject = gameObject;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float timeStop)
     {
 
         //Debug.Log(damage);
         if (!_blocking)
         {
             _currentHealth -= damage;
+
+            Hitstop.Instance.Stop(timeStop);
 
             if (_currentHealth <= 0) Death();
             onTakeDamage?.Invoke();

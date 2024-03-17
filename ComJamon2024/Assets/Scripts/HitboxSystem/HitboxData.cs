@@ -9,5 +9,7 @@ public class HitboxData : ScriptableObject
     public Vector3 HitboxPosition;
     public Vector3 HitboxSize;
     public float ExtraVariable; //Esto depende del tipo de Overlap
+
+    public float HitstopTime;
     public LayerMask TargetLayerMask;
 }

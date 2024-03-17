@@ -7,6 +7,7 @@ public class NeedleProjectileComponent : MonoBehaviour
 {
     [SerializeField]
     int damage = 2;
+    float hitstop = 0.06f;
 
     float _timeSinceSpawn;
 
@@ -30,7 +31,7 @@ public class NeedleProjectileComponent : MonoBehaviour
         Debug.Log(other);
         if (_enemyLayer == (_enemyLayer|(1<< other.gameObject.layer)))
         {
-            other.gameObject.GetComponent<HealthHandler>().TakeDamage(damage);
+            other.gameObject.GetComponent<HealthHandler>().TakeDamage(damage, hitstop);
         }
     }
 

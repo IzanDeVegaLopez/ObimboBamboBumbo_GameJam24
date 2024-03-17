@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: GroundedSlash1
   m_EditorClassIdentifier: 
   Damage: 1
-  HitboxPosition: {x: 0.2, y: 0.5, z: 0}
+  HitboxPosition: {x: 0.2, y: 0.7, z: 0}
   HitboxSize: {x: 1, y: 1, z: 0}
   ExtraVariable: 0
+  HitstopTime: 0.1
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 128

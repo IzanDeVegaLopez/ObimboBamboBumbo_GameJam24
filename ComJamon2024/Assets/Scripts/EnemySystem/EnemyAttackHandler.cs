@@ -17,7 +17,7 @@ public class EnemyAttackHandler : HitboxHandler
         HitPlayer(_enemyHitbox);
         if (playerReached != null)
         {
-            playerReached.GetComponent<HealthHandler>().TakeDamage(_enemyHitbox.Damage);
+            playerReached.GetComponent<HealthHandler>().TakeDamage(_enemyHitbox.Damage, _enemyHitbox.HitstopTime);
             playerReached.GetComponent<KnockbackComponent>().TakeKnockback(playerReached.transform.position - transform.position);
         }
     }

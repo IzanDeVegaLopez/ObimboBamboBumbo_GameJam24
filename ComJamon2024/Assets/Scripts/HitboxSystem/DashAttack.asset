@@ -16,6 +16,7 @@ MonoBehaviour:
   HitboxPosition: {x: -2, y: 0.5, z: 0}
   HitboxSize: {x: 5, y: 1, z: 0}
   ExtraVariable: 0
+  HitstopTime: 0.2
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 128

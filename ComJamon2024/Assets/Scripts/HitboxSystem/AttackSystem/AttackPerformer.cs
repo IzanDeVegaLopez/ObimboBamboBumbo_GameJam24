@@ -29,6 +29,7 @@ public class AttackPerformer : MonoBehaviour
         {
             //_isAttacking = true;
             _anim.StartAttackAnim((int)_comboSystem.currentComboState);
+            _anim.PlayCutEffect();
 
         }
 
