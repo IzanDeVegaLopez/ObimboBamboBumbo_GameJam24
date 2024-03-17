@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        FindMenuManager();
         Time.timeScale = 0;
         _menuManager.OpenMenu(0);
     }

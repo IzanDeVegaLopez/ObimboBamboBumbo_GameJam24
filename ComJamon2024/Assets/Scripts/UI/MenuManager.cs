@@ -51,6 +51,9 @@ public class MenuManager : MonoBehaviour
     }
 
     public void SelectButton() => _firstSelected[0].Select();
+
+    public void UnpauseGame() => GameManager.Instance.UnpauseGame();
+    public void PauseGame() => GameManager.Instance.PauseGame();
     #endregion
 
     private void Start()

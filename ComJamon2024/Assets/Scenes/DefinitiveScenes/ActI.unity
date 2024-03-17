@@ -2295,14 +2295,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2256409201368775830, guid: d2746c38e5004ec4db01a41417f00e03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1784272828}
     - target: {fileID: 5973305304801125841, guid: d2746c38e5004ec4db01a41417f00e03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 727284203}
-    - target: {fileID: 5973305304801125841, guid: d2746c38e5004ec4db01a41417f00e03, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2489,8 +2489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManagement: {fileID: 11400000, guid: 547f457171ac0ae4b9b3549e6cf7b976, type: 2}
-  isGameplay: 0
-  _menuManager: {fileID: 0}
 --- !u!4 &1784272829
 Transform:
   m_ObjectHideFlags: 0
