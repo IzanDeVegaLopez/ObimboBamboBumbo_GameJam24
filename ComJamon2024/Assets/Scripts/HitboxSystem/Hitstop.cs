@@ -36,4 +36,8 @@ public class Hitstop : MonoBehaviour
         Time.timeScale = 1.0f;
         waiting = false;
     }
+    private void OnDestroy()
+    {
+        Time.timeScale = 1.0f;
+    }
 }

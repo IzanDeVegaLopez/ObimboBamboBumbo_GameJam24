@@ -7,11 +7,6 @@ using UnityEngine;
 public class HealAbility : AbilityData
 {
     HealthHandler _myHealthHandler;
-
-    void Start()
-    {
-
-    }
     public override void ExecuteAbility(AbilityHolder abilityHolder)
     {
         _myHealthHandler = abilityHolder.GetComponent<HealthHandler>();
@@ -19,6 +14,7 @@ public class HealAbility : AbilityData
         {
             _myHealthHandler.Heal(); //Ejecutar animación. Se puede poner como evento de animación y es mejor, es solo para probar
             manaManager.currentMana -= manaCost;
+            AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerHeal, AudioManager.Instance.playerCTR);
         }
         //else Ejecutar animación de que no se ha curado
     }

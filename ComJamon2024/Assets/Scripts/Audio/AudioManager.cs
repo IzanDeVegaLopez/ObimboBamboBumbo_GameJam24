@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     #region properties
     private static AudioManager instance;
     public static AudioManager Instance { get { return instance; } }
+    
+    private float actualBGMTime = 0;
     #endregion
 
     #region methods
@@ -31,12 +33,18 @@ public class AudioManager : MonoBehaviour
     }
     public void StopBGM()
     {
+        actualBGMTime = audioSource.time;
         audioSource.Stop();
     }
     public void ChangeBGM(AudioClip newBGM)
     {
         audioSource.clip = newBGM;
         PlayBGM();
+    }
+    public void ContinueBGM()
+    {
+        audioSource.time = actualBGMTime;
+        audioSource.Play();
     }
     #endregion
     private void Awake()
