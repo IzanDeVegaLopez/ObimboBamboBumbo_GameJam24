@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class CharacterMovement : MonoBehaviour
     bool isJumping = false;
     int touchingWall = 0;
     int airJumpsLeft = 1;
+    bool _blockMovement = false;
+    float _realXInput = 1;
+    bool _grounded = false;
 
     #region Timers
     float lastGroundedTime;
@@ -57,6 +61,11 @@ public class CharacterMovement : MonoBehaviour
             lastGroundedTime = _md.jumpCoyoteTime;
             isJumping = false;
             airJumpsLeft = _md.totalAirJumpNumber;
+            _grounded = true;
+        }
+        else
+        {
+            _grounded = false;
         }
 
         //CheckTouchingWall Right
@@ -147,8 +156,17 @@ public class CharacterMovement : MonoBehaviour
         targetSpeed = Mathf.Lerp(_rb.velocity.x, targetSpeed, lerpValue);
 
         float speedDif = targetSpeed - _rb.velocity.x;
+        float accelRate;
 
-        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? _md.acceleration : _md.decceleration;
+        if (_grounded)
+        {
+            accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? _md.acceleration : _md.decceleration;
+        }
+        else
+        {
+            accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? (_md.acceleration* _md.accMultiplierAir) : (_md.decceleration * _md.decMultiplierAir);
+        }
+
 
         float movement = speedDif * accelRate;
 
@@ -215,6 +233,18 @@ public class CharacterMovement : MonoBehaviour
         if (val) _rb.velocity = Vector2.zero;
     }
 
+    public void BlockMovement(bool val)
+    {
+        _blockMovement = val;
+        if (val) moveInputX = 0;
+        else
+        {
+            moveInputX = _realXInput;
+            if (_realXInput != 0) changeLastDirection(Mathf.Sign(_realXInput));
+        }
+        
+    }
+
     void StopDash()
     {
         _rb.velocity = Vector3.zero;
@@ -235,6 +265,8 @@ public class CharacterMovement : MonoBehaviour
     #region InputCallbackMethods
     public void SetXInput(float input)
     {
+        _realXInput = input;
+        if (_blockMovement) return;
         moveInputX = input;
         if (input != 0) changeLastDirection( Mathf.Sign(input));
     }

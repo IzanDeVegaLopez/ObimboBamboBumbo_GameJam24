@@ -11,7 +11,7 @@ public class ComboSystem : HitboxHandler
 
     public ComboStates currentComboState { get => _currentComboState; }
 
-    public bool Attack()
+    public void Attack()
     {
         //Check enemies hit
         HitEnemies(_groundedAttack[(int)_currentComboState]);
@@ -25,8 +25,6 @@ public class ComboSystem : HitboxHandler
             enemy.gameObject.GetComponent<KnockbackComponent>().TakeKnockback(enemy.transform.position - transform.position);
         }
         #endregion 
-
-        
         //Cambiar estado
         if ((int)_currentComboState != 3)
         {
@@ -36,8 +34,6 @@ public class ComboSystem : HitboxHandler
         {
             _currentComboState = (ComboStates)0;
         }
-        
-        return enemiesReached.Length != 0;
     }
 
     public void resetComboState()
