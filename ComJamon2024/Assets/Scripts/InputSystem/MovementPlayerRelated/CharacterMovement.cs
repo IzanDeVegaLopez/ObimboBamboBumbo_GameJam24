@@ -196,6 +196,7 @@ public class CharacterMovement : MonoBehaviour
         }
         lastDashTime = 0;
         dashing = true;
+        AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerDash, AudioManager.Instance.playerCTR);
     }
 
     void Dash(Vector2 direction)
@@ -204,6 +205,7 @@ public class CharacterMovement : MonoBehaviour
         _rb.AddForce(direction.normalized * _md.dashForce, ForceMode2D.Impulse);
         lastDashTime = 0;
         dashing = true;
+        AudioManager.Instance.PlaySFX(SoundBankComponent.Instance.playerDash, AudioManager.Instance.playerCTR);
     }
 
     public void SetAnchored(bool val)

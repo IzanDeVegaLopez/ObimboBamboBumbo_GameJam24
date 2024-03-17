@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM()
     {
         audioSource.Play();
+        Debug.Log("Reproduciendo");
     }
     public void PlaySFX(AudioClip clip, float volume)
     {
@@ -53,6 +54,8 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        audioSource = GetComponent<AudioSource>();
         PlayBGM();
     }
 }
