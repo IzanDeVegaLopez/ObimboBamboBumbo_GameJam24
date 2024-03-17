@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     //para testear
     private float elapsedTime = 0f;
     private float elapsedTime2 = 0f;
-    private float duration = 2f;
+    private float duration = 1f;
     public enum states
     {
         walk, attack, wait, stun
