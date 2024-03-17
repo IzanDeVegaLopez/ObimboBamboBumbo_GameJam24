@@ -13,12 +13,14 @@ public class SceneHandler : MonoBehaviour
     {
         sceneManagement.actualScene = 9;
         SceneManager.LoadScene(sceneBuildIndex: sceneManagement.actualScene);
+        GameManager.Instance.FindMenuManager();
     }
 
     public void LoadNextScene()
     {
         sceneManagement.actualScene++;
         SceneManager.LoadScene(sceneBuildIndex: sceneManagement.actualScene);
+        GameManager.Instance.FindMenuManager();
     }
 
     public void ReturnToMainMenu()
@@ -37,5 +39,6 @@ public class SceneHandler : MonoBehaviour
     {
         sceneManagement.actualScene = 2;
         SceneManager.LoadScene(sceneBuildIndex: sceneManagement.actualScene);
+        GameManager.Instance.FindMenuManager();
     }
 }

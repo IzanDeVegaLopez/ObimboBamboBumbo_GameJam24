@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
 
 
     #region references
-    [SerializeField]
     private MenuManager _menuManager;
 
     #endregion
+    public void FindMenuManager() => _menuManager = FindAnyObjectByType<MenuManager>();
+
     public void PauseGame()
     {
         Time.timeScale = 0;
@@ -34,5 +35,10 @@ public class GameManager : MonoBehaviour
     {
         if (_instance != null) Destroy(this);
         else _instance = this;
+    }
+
+    private void Start()
+    {
+        FindMenuManager();
     }
 }
